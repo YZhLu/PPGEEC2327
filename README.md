@@ -1,0 +1,2 @@
+# PPGEEC2327
+Repositório contendo artefatos da disciplina de TÓPICOS ESPECIAIS EM PROCESSAMENTO INTELIGENTE DA INFORMAÇÃO
