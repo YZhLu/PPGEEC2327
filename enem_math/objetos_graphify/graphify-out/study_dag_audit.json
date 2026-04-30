@@ -1,0 +1,327 @@
+{
+  "assumption": "Sequência pedagógica inferida; não é uma ordem oficial do INEP.",
+  "phase_count": 7,
+  "object_count": 35,
+  "phase_edges": [
+    {
+      "source": "Fase 1 - Base numérica",
+      "target": "Fase 2 - Proporção, variação e contagem",
+      "reason": "Proporção e contagem dependem de conforto com operações, comparação e decomposição numérica."
+    },
+    {
+      "source": "Fase 2 - Proporção, variação e contagem",
+      "target": "Fase 3 - Dados e probabilidade",
+      "reason": "Probabilidade e leitura quantitativa de dados usam razão, porcentagem e princípios de contagem."
+    },
+    {
+      "source": "Fase 2 - Proporção, variação e contagem",
+      "target": "Fase 4 - Geometria plana e medidas",
+      "reason": "Escalas, medidas e semelhança geométrica exigem raciocínio proporcional."
+    },
+    {
+      "source": "Fase 4 - Geometria plana e medidas",
+      "target": "Fase 5 - Triângulos, círculos e trigonometria",
+      "reason": "Trigonometria e relações métricas surgem depois de ângulos, retas e figuras básicas."
+    },
+    {
+      "source": "Fase 1 - Base numérica",
+      "target": "Fase 6 - Álgebra e plano cartesiano",
+      "reason": "Álgebra escolar exige domínio de operações, desigualdades e manipulação simbólica básica."
+    },
+    {
+      "source": "Fase 2 - Proporção, variação e contagem",
+      "target": "Fase 6 - Álgebra e plano cartesiano",
+      "reason": "Funções e gráficos modelam dependência entre grandezas já introduzida na fase 2."
+    },
+    {
+      "source": "Fase 6 - Álgebra e plano cartesiano",
+      "target": "Fase 7 - Funções e integração algébrica",
+      "reason": "As famílias de funções vêm depois de equações, gráficos e leitura no plano cartesiano."
+    },
+    {
+      "source": "Fase 5 - Triângulos, círculos e trigonometria",
+      "target": "Fase 7 - Funções e integração algébrica",
+      "reason": "O ciclo trigonométrico integra trigonometria, circunferência e representação algébrica."
+    }
+  ],
+  "prerequisite_edges": [
+    {
+      "source": "Operações em conjuntos numéricos",
+      "target": "Divisibilidade",
+      "reason": "Divisibilidade nasce da manipulação de inteiros e decomposição de operações."
+    },
+    {
+      "source": "Divisibilidade",
+      "target": "Fatoração",
+      "reason": "Fatoração usa critérios de divisibilidade e decomposição em fatores."
+    },
+    {
+      "source": "Operações em conjuntos numéricos",
+      "target": "Desigualdades",
+      "reason": "Comparar números e interpretar intervalos depende de domínio dos conjuntos numéricos."
+    },
+    {
+      "source": "Operações em conjuntos numéricos",
+      "target": "Razões e proporções",
+      "reason": "Razões exigem cálculo com frações, múltiplos e equivalências numéricas."
+    },
+    {
+      "source": "Razões e proporções",
+      "target": "Porcentagem e juros",
+      "reason": "Porcentagem é uma razão especial e juros usa variação percentual."
+    },
+    {
+      "source": "Razões e proporções",
+      "target": "Relações de dependência entre grandezas",
+      "reason": "Dependência entre grandezas normalmente é apresentada com proporcionalidade direta ou inversa."
+    },
+    {
+      "source": "Operações em conjuntos numéricos",
+      "target": "Sequências e progressões",
+      "reason": "Sequências usam padrões numéricos e recorrência sobre operações básicas."
+    },
+    {
+      "source": "Princípios de contagem",
+      "target": "Noções de probabilidade",
+      "reason": "Probabilidade elementar costuma começar pela contagem de casos possíveis e favoráveis."
+    },
+    {
+      "source": "Representação e análise de dados",
+      "target": "Medidas de tendência central",
+      "reason": "Ler e organizar dados vem antes de resumir a distribuição por média, moda ou mediana."
+    },
+    {
+      "source": "Medidas de tendência central",
+      "target": "Desvios e variância",
+      "reason": "Variância e desvio são medidas de dispersão calculadas a partir do centro da distribuição."
+    },
+    {
+      "source": "Grandezas, unidades de medida e escalas",
+      "target": "Comprimentos, áreas e volumes",
+      "reason": "Antes de calcular medidas geométricas, o aluno precisa dominar unidades e escalas."
+    },
+    {
+      "source": "Características das figuras geométricas planas e espaciais",
+      "target": "Simetrias de figuras planas ou espaciais",
+      "reason": "Reconhecer formas e propriedades vem antes de analisar simetrias."
+    },
+    {
+      "source": "Ângulos",
+      "target": "Posições de retas",
+      "reason": "Retas paralelas, concorrentes e perpendiculares são estudadas com base nas relações angulares."
+    },
+    {
+      "source": "Razões e proporções",
+      "target": "Teorema de Tales",
+      "reason": "Tales depende de proporcionalidade entre segmentos."
+    },
+    {
+      "source": "Posições de retas",
+      "target": "Teorema de Tales",
+      "reason": "O teorema é usualmente apresentado em feixes de retas paralelas cortadas por transversais."
+    },
+    {
+      "source": "Teorema de Tales",
+      "target": "Congruência e semelhança de triângulos",
+      "reason": "Tales ajuda a motivar e operacionalizar semelhança em triângulos."
+    },
+    {
+      "source": "Congruência e semelhança de triângulos",
+      "target": "Relações métricas nos triângulos",
+      "reason": "Relações métricas ficam mais naturais depois de semelhança e propriedades de triângulos."
+    },
+    {
+      "source": "Relações métricas nos triângulos",
+      "target": "Trigonometria do ângulo agudo",
+      "reason": "Seno, cosseno e tangente no triângulo retângulo dependem de relações métricas."
+    },
+    {
+      "source": "Ângulos",
+      "target": "Circunferências",
+      "reason": "Arcos, setores e ângulos centrais pedem um repertório angular já consolidado."
+    },
+    {
+      "source": "Plano cartesiano",
+      "target": "Retas",
+      "reason": "O estudo analítico da reta usa coordenadas e leitura no plano cartesiano."
+    },
+    {
+      "source": "Retas",
+      "target": "Paralelismo e perpendicularidade",
+      "reason": "Paralelismo e perpendicularidade analíticos são estudados a partir de retas e inclinação."
+    },
+    {
+      "source": "Relações de dependência entre grandezas",
+      "target": "Gráficos e funções",
+      "reason": "Função costuma aparecer como formalização da dependência entre variáveis."
+    },
+    {
+      "source": "Plano cartesiano",
+      "target": "Gráficos e funções",
+      "reason": "Gráficos dependem da leitura de pares ordenados no plano cartesiano."
+    },
+    {
+      "source": "Desigualdades",
+      "target": "Equações e inequações",
+      "reason": "Inequações formalizam comparações algébricas já iniciadas nas desigualdades."
+    },
+    {
+      "source": "Equações e inequações",
+      "target": "Sistemas de equações",
+      "reason": "Sistemas prolongam a resolução de equações para mais de uma incógnita."
+    },
+    {
+      "source": "Gráficos e funções",
+      "target": "Funções algébricas do 1.º e do 2.º graus",
+      "reason": "Funções afim e quadrática são o primeiro aprofundamento natural do estudo de funções."
+    },
+    {
+      "source": "Equações e inequações",
+      "target": "Funções algébricas do 1.º e do 2.º graus",
+      "reason": "Resolver raízes, sinais e problemas exige equações associadas às funções básicas."
+    },
+    {
+      "source": "Funções algébricas do 1.º e do 2.º graus",
+      "target": "Funções polinomiais",
+      "reason": "Polinomiais ampliam o repertório das funções algébricas básicas."
+    },
+    {
+      "source": "Funções algébricas do 1.º e do 2.º graus",
+      "target": "Funções racionais",
+      "reason": "Funções racionais ficam mais fáceis depois que o aluno domina zeros, gráficos e taxas de variação simples."
+    },
+    {
+      "source": "Funções algébricas do 1.º e do 2.º graus",
+      "target": "Funções exponenciais e logarítmicas",
+      "reason": "Exponenciais e logaritmos entram melhor quando o aluno já entende famílias de funções e seus gráficos."
+    },
+    {
+      "source": "Circunferências",
+      "target": "Relações no ciclo trigonométrico e funções trigonométricas",
+      "reason": "O ciclo trigonométrico usa a circunferência como suporte geométrico."
+    },
+    {
+      "source": "Trigonometria do ângulo agudo",
+      "target": "Relações no ciclo trigonométrico e funções trigonométricas",
+      "reason": "As funções trigonométricas generalizam o que foi estudado no triângulo retângulo."
+    }
+  ],
+  "topological_order": [
+    "Trilha sugerida de estudo",
+    "Fase 1 - Base numérica",
+    "Operações em conjuntos numéricos",
+    "Fase 2 - Proporção, variação e contagem",
+    "Divisibilidade",
+    "Desigualdades",
+    "Razões e proporções",
+    "Sequências e progressões",
+    "Princípios de contagem",
+    "Fase 3 - Dados e probabilidade",
+    "Fase 4 - Geometria plana e medidas",
+    "Fase 6 - Álgebra e plano cartesiano",
+    "Fatoração",
+    "Porcentagem e juros",
+    "Relações de dependência entre grandezas",
+    "Representação e análise de dados",
+    "Noções de probabilidade",
+    "Características das figuras geométricas planas e espaciais",
+    "Grandezas, unidades de medida e escalas",
+    "Ângulos",
+    "Fase 5 - Triângulos, círculos e trigonometria",
+    "Plano cartesiano",
+    "Equações e inequações",
+    "Medidas de tendência central",
+    "Simetrias de figuras planas ou espaciais",
+    "Comprimentos, áreas e volumes",
+    "Posições de retas",
+    "Circunferências",
+    "Fase 7 - Funções e integração algébrica",
+    "Retas",
+    "Gráficos e funções",
+    "Sistemas de equações",
+    "Desvios e variância",
+    "Teorema de Tales",
+    "Paralelismo e perpendicularidade",
+    "Funções algébricas do 1.º e do 2.º graus",
+    "Congruência e semelhança de triângulos",
+    "Funções polinomiais",
+    "Funções racionais",
+    "Funções exponenciais e logarítmicas",
+    "Relações métricas nos triângulos",
+    "Trigonometria do ângulo agudo",
+    "Relações no ciclo trigonométrico e funções trigonométricas"
+  ],
+  "recommended_order": [
+    {
+      "phase": "Fase 1 - Base numérica",
+      "objects": [
+        "Operações em conjuntos numéricos",
+        "Divisibilidade",
+        "Fatoração",
+        "Desigualdades"
+      ]
+    },
+    {
+      "phase": "Fase 2 - Proporção, variação e contagem",
+      "objects": [
+        "Razões e proporções",
+        "Porcentagem e juros",
+        "Relações de dependência entre grandezas",
+        "Sequências e progressões",
+        "Princípios de contagem"
+      ]
+    },
+    {
+      "phase": "Fase 3 - Dados e probabilidade",
+      "objects": [
+        "Representação e análise de dados",
+        "Medidas de tendência central",
+        "Desvios e variância",
+        "Noções de probabilidade"
+      ]
+    },
+    {
+      "phase": "Fase 4 - Geometria plana e medidas",
+      "objects": [
+        "Características das figuras geométricas planas e espaciais",
+        "Grandezas, unidades de medida e escalas",
+        "Comprimentos, áreas e volumes",
+        "Ângulos",
+        "Posições de retas",
+        "Simetrias de figuras planas ou espaciais"
+      ]
+    },
+    {
+      "phase": "Fase 5 - Triângulos, círculos e trigonometria",
+      "objects": [
+        "Teorema de Tales",
+        "Congruência e semelhança de triângulos",
+        "Relações métricas nos triângulos",
+        "Circunferências",
+        "Trigonometria do ângulo agudo"
+      ]
+    },
+    {
+      "phase": "Fase 6 - Álgebra e plano cartesiano",
+      "objects": [
+        "Plano cartesiano",
+        "Retas",
+        "Paralelismo e perpendicularidade",
+        "Gráficos e funções",
+        "Equações e inequações",
+        "Sistemas de equações"
+      ]
+    },
+    {
+      "phase": "Fase 7 - Funções e integração algébrica",
+      "objects": [
+        "Funções algébricas do 1.º e do 2.º graus",
+        "Funções polinomiais",
+        "Funções racionais",
+        "Funções exponenciais e logarítmicas",
+        "Relações no ciclo trigonométrico e funções trigonométricas"
+      ]
+    }
+  ],
+  "source_pdf": "/Users/yzhlu/Documents/PHD/2026-1/PPGEEC2327_-_topicos_4_-_T01/enem/objetos_graphify/objetos_de_conhecimento.pdf"
+}

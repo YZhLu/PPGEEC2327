@@ -1,0 +1,224 @@
+{
+  "communities": {
+    "0": [
+      "phase_fase_1_base_numérica",
+      "obj_operações_em_conjuntos_numéricos",
+      "obj_divisibilidade",
+      "obj_fatoração",
+      "obj_desigualdades"
+    ],
+    "1": [
+      "phase_fase_2_proporção_variação_e_contagem",
+      "obj_razões_e_proporções",
+      "obj_porcentagem_e_juros",
+      "obj_relações_de_dependência_entre_grandezas",
+      "obj_sequências_e_progressões",
+      "obj_princípios_de_contagem"
+    ],
+    "2": [
+      "phase_fase_3_dados_e_probabilidade",
+      "obj_representação_e_análise_de_dados",
+      "obj_medidas_de_tendência_central",
+      "obj_desvios_e_variância",
+      "obj_noções_de_probabilidade"
+    ],
+    "3": [
+      "phase_fase_4_geometria_plana_e_medidas",
+      "obj_características_das_figuras_geométricas_planas_e_espaciais",
+      "obj_grandezas_unidades_de_medida_e_escalas",
+      "obj_comprimentos_áreas_e_volumes",
+      "obj_ângulos",
+      "obj_posições_de_retas",
+      "obj_simetrias_de_figuras_planas_ou_espaciais"
+    ],
+    "4": [
+      "phase_fase_5_triângulos_círculos_e_trigonometria",
+      "obj_teorema_de_tales",
+      "obj_congruência_e_semelhança_de_triângulos",
+      "obj_relações_métricas_nos_triângulos",
+      "obj_circunferências",
+      "obj_trigonometria_do_ângulo_agudo"
+    ],
+    "5": [
+      "phase_fase_6_álgebra_e_plano_cartesiano",
+      "obj_plano_cartesiano",
+      "obj_retas",
+      "obj_paralelismo_e_perpendicularidade",
+      "obj_gráficos_e_funções",
+      "obj_equações_e_inequações",
+      "obj_sistemas_de_equações"
+    ],
+    "6": [
+      "phase_fase_7_funções_e_integração_algébrica",
+      "obj_funções_algébricas_do_1o_e_do_2o_graus",
+      "obj_funções_polinomiais",
+      "obj_funções_racionais",
+      "obj_funções_exponenciais_e_logarítmicas",
+      "obj_relações_no_ciclo_trigonométrico_e_funções_trigonométricas"
+    ]
+  },
+  "labels": {
+    "0": "Fase 1 - Base numérica",
+    "1": "Fase 2 - Proporção, variação e contagem",
+    "2": "Fase 3 - Dados e probabilidade",
+    "3": "Fase 4 - Geometria plana e medidas",
+    "4": "Fase 5 - Triângulos, círculos e trigonometria",
+    "5": "Fase 6 - Álgebra e plano cartesiano",
+    "6": "Fase 7 - Funções e integração algébrica"
+  },
+  "cohesion": {
+    "0": 0.7,
+    "1": 0.47,
+    "2": 0.6,
+    "3": 0.43,
+    "4": 0.53,
+    "5": 0.48,
+    "6": 0.53
+  },
+  "gods": [
+    {
+      "id": "phase_fase_2_proporção_variação_e_contagem",
+      "label": "Fase 2 - Proporção, variação e contagem",
+      "degree": 10
+    },
+    {
+      "id": "phase_fase_6_álgebra_e_plano_cartesiano",
+      "label": "Fase 6 - Álgebra e plano cartesiano",
+      "degree": 10
+    },
+    {
+      "id": "phase_fase_4_geometria_plana_e_medidas",
+      "label": "Fase 4 - Geometria plana e medidas",
+      "degree": 9
+    },
+    {
+      "id": "phase_fase_5_triângulos_círculos_e_trigonometria",
+      "label": "Fase 5 - Triângulos, círculos e trigonometria",
+      "degree": 8
+    },
+    {
+      "id": "phase_fase_7_funções_e_integração_algébrica",
+      "label": "Fase 7 - Funções e integração algébrica",
+      "degree": 8
+    },
+    {
+      "id": "study_root",
+      "label": "Trilha sugerida de estudo",
+      "degree": 7
+    },
+    {
+      "id": "phase_fase_1_base_numérica",
+      "label": "Fase 1 - Base numérica",
+      "degree": 7
+    },
+    {
+      "id": "phase_fase_3_dados_e_probabilidade",
+      "label": "Fase 3 - Dados e probabilidade",
+      "degree": 6
+    },
+    {
+      "id": "obj_funções_algébricas_do_1o_e_do_2o_graus",
+      "label": "Funções algébricas do 1.º e do 2.º graus",
+      "degree": 6
+    },
+    {
+      "id": "obj_operações_em_conjuntos_numéricos",
+      "label": "Operações em conjuntos numéricos",
+      "degree": 5
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Fase 1 - Base numérica",
+      "target": "Fatoração",
+      "source_files": [
+        "build_study_dag.py",
+        "objetos_de_conhecimento.pdf"
+      ],
+      "confidence": "INFERRED",
+      "relation": "study_block_contains",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code ↔ paper); connects across different repos/directories; peripheral node `Fatoração` unexpectedly reaches hub `Fase 1 - Base numérica`"
+    },
+    {
+      "source": "Fase 2 - Proporção, variação e contagem",
+      "target": "Porcentagem e juros",
+      "source_files": [
+        "build_study_dag.py",
+        "objetos_de_conhecimento.pdf"
+      ],
+      "confidence": "INFERRED",
+      "relation": "study_block_contains",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code ↔ paper); connects across different repos/directories; peripheral node `Porcentagem e juros` unexpectedly reaches hub `Fase 2 - Proporção, variação e contagem`"
+    },
+    {
+      "source": "Fase 2 - Proporção, variação e contagem",
+      "target": "Sequências e progressões",
+      "source_files": [
+        "build_study_dag.py",
+        "objetos_de_conhecimento.pdf"
+      ],
+      "confidence": "INFERRED",
+      "relation": "study_block_contains",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code ↔ paper); connects across different repos/directories; peripheral node `Sequências e progressões` unexpectedly reaches hub `Fase 2 - Proporção, variação e contagem`"
+    },
+    {
+      "source": "Fase 2 - Proporção, variação e contagem",
+      "target": "Princípios de contagem",
+      "source_files": [
+        "build_study_dag.py",
+        "objetos_de_conhecimento.pdf"
+      ],
+      "confidence": "INFERRED",
+      "relation": "study_block_contains",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code ↔ paper); connects across different repos/directories; peripheral node `Princípios de contagem` unexpectedly reaches hub `Fase 2 - Proporção, variação e contagem`"
+    },
+    {
+      "source": "Fase 3 - Dados e probabilidade",
+      "target": "Representação e análise de dados",
+      "source_files": [
+        "build_study_dag.py",
+        "objetos_de_conhecimento.pdf"
+      ],
+      "confidence": "INFERRED",
+      "relation": "study_block_contains",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code ↔ paper); connects across different repos/directories; peripheral node `Representação e análise de dados` unexpectedly reaches hub `Fase 3 - Dados e probabilidade`"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `Fase 2 - Proporção, variação e contagem` connect `Fase 2 - Proporção, variação e contagem` to `Community None`, `Fase 1 - Base numérica`, `Fase 3 - Dados e probabilidade`, `Fase 4 - Geometria plana e medidas`, `Fase 6 - Álgebra e plano cartesiano`?",
+      "why": "High betweenness centrality (0.285) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Trilha sugerida de estudo` connect `unknown` to `Fase 1 - Base numérica`, `Fase 2 - Proporção, variação e contagem`, `Fase 3 - Dados e probabilidade`, `Fase 4 - Geometria plana e medidas`, `Fase 5 - Triângulos, círculos e trigonometria`, `Fase 6 - Álgebra e plano cartesiano`, `Fase 7 - Funções e integração algébrica`?",
+      "why": "High betweenness centrality (0.259) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Fase 4 - Geometria plana e medidas` connect `Fase 4 - Geometria plana e medidas` to `Community None`, `Fase 2 - Proporção, variação e contagem`, `Fase 5 - Triângulos, círculos e trigonometria`?",
+      "why": "High betweenness centrality (0.254) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 10 inferred relationships involving `Fase 2 - Proporção, variação e contagem` (e.g. with `Trilha sugerida de estudo` and `Razões e proporções`) actually correct?",
+      "why": "`Fase 2 - Proporção, variação e contagem` has 10 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 10 inferred relationships involving `Fase 6 - Álgebra e plano cartesiano` (e.g. with `Trilha sugerida de estudo` and `Plano cartesiano`) actually correct?",
+      "why": "`Fase 6 - Álgebra e plano cartesiano` has 10 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 9 inferred relationships involving `Fase 4 - Geometria plana e medidas` (e.g. with `Trilha sugerida de estudo` and `Características das figuras geométricas planas e espaciais`) actually correct?",
+      "why": "`Fase 4 - Geometria plana e medidas` has 9 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 8 inferred relationships involving `Fase 5 - Triângulos, círculos e trigonometria` (e.g. with `Trilha sugerida de estudo` and `Teorema de Tales`) actually correct?",
+      "why": "`Fase 5 - Triângulos, círculos e trigonometria` has 8 INFERRED edges - model-reasoned connections that need verification."
+    }
+  ]
+}

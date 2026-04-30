@@ -1,0 +1,3727 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "he_001",
+        "nodes": [
+          "probabilidade",
+          "analise_combinatoria",
+          "leitura_de_tabelas"
+        ],
+        "weight": 4,
+        "questions": [
+          "Q488075",
+          "Q488039",
+          "Q418128",
+          "Q488049"
+        ],
+        "relation": "applied_together_with"
+      },
+      {
+        "id": "he_002",
+        "nodes": [
+          "funcao_afim",
+          "matematica_financeira",
+          "interpretacao_de_graficos"
+        ],
+        "weight": 4,
+        "questions": [
+          "Q487935",
+          "Q418075",
+          "Q488031",
+          "Q488013"
+        ],
+        "relation": "applied_together_with"
+      },
+      {
+        "id": "he_003",
+        "nodes": [
+          "geometria_espacial",
+          "razao_e_proporcao",
+          "grandezas_e_medidas"
+        ],
+        "weight": 4,
+        "questions": [
+          "Q487939",
+          "Q491601",
+          "Q491600",
+          "Q488019"
+        ],
+        "relation": "applied_together_with"
+      },
+      {
+        "id": "he_004",
+        "nodes": [
+          "geometria_plana",
+          "trigonometria",
+          "grandezas_e_medidas"
+        ],
+        "weight": 3,
+        "questions": [
+          "Q17201",
+          "Q488055",
+          "Q491603"
+        ],
+        "relation": "applied_together_with"
+      },
+      {
+        "id": "he_005",
+        "nodes": [
+          "progressao_geometrica",
+          "funcao_exponencial",
+          "matematica_financeira"
+        ],
+        "weight": 3,
+        "questions": [
+          "Q17512",
+          "Q17189",
+          "Q488065"
+        ],
+        "relation": "applied_together_with"
+      },
+      {
+        "id": "he_006",
+        "nodes": [
+          "probabilidade",
+          "interpretacao_de_graficos",
+          "leitura_de_tabelas"
+        ],
+        "weight": 3,
+        "questions": [
+          "Q418132",
+          "Q418164",
+          "Q491856"
+        ],
+        "relation": "applied_together_with"
+      },
+      {
+        "id": "he_007",
+        "nodes": [
+          "funcao_quadratica",
+          "funcao_afim",
+          "equacao"
+        ],
+        "weight": 3,
+        "questions": [
+          "Q488049",
+          "Q488119",
+          "Q283962"
+        ],
+        "relation": "applied_together_with"
+      },
+      {
+        "id": "he_008",
+        "nodes": [
+          "analise_combinatoria",
+          "potenciacao",
+          "sequencias_e_series"
+        ],
+        "weight": 2,
+        "questions": [
+          "Q491936",
+          "Q283942"
+        ],
+        "relation": "applied_together_with"
+      },
+      {
+        "id": "he_009",
+        "nodes": [
+          "semelhanca_de_figuras",
+          "progressao_geometrica",
+          "sequencias_e_series"
+        ],
+        "weight": 2,
+        "questions": [
+          "Q418101",
+          "Q488001"
+        ],
+        "relation": "applied_together_with"
+      },
+      {
+        "id": "he_010",
+        "nodes": [
+          "razao_e_proporcao",
+          "porcentagem",
+          "matematica_financeira"
+        ],
+        "weight": 2,
+        "questions": [
+          "Q491847",
+          "Q420958"
+        ],
+        "relation": "applied_together_with"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "Interpreta\u00e7\u00e3o de Gr\u00e1ficos",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "interpretacao_de_graficos",
+      "community": 4,
+      "norm_label": "interpretacao de graficos"
+    },
+    {
+      "label": "Raz\u00e3o e Propor\u00e7\u00e3o",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "razao_e_proporcao",
+      "community": 1,
+      "norm_label": "razao e proporcao"
+    },
+    {
+      "label": "Geometria Plana",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "geometria_plana",
+      "community": 0,
+      "norm_label": "geometria plana"
+    },
+    {
+      "label": "Estat\u00edstica",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "estatistica",
+      "community": 1,
+      "norm_label": "estatistica"
+    },
+    {
+      "label": "Leitura de Tabelas",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "leitura_de_tabelas",
+      "community": 4,
+      "norm_label": "leitura de tabelas"
+    },
+    {
+      "label": "Porcentagem",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "porcentagem",
+      "community": 1,
+      "norm_label": "porcentagem"
+    },
+    {
+      "label": "Equa\u00e7\u00e3o",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "equacao",
+      "community": 6,
+      "norm_label": "equacao"
+    },
+    {
+      "label": "An\u00e1lise Combinat\u00f3ria",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "analise_combinatoria",
+      "community": 2,
+      "norm_label": "analise combinatoria"
+    },
+    {
+      "label": "Fun\u00e7\u00e3o Afim",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "funcao_afim",
+      "community": 1,
+      "norm_label": "funcao afim"
+    },
+    {
+      "label": "Grandezas e Medidas",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "grandezas_e_medidas",
+      "community": 0,
+      "norm_label": "grandezas e medidas"
+    },
+    {
+      "label": "Geometria Espacial",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "geometria_espacial",
+      "community": 6,
+      "norm_label": "geometria espacial"
+    },
+    {
+      "label": "Probabilidade",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "probabilidade",
+      "community": 4,
+      "norm_label": "probabilidade"
+    },
+    {
+      "label": "Trigonometria",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "trigonometria",
+      "community": 0,
+      "norm_label": "trigonometria"
+    },
+    {
+      "label": "Matem\u00e1tica Financeira",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "matematica_financeira",
+      "community": 1,
+      "norm_label": "matematica financeira"
+    },
+    {
+      "label": "Potencia\u00e7\u00e3o e Radicia\u00e7\u00e3o",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "potenciacao_e_radicacao",
+      "community": 5,
+      "norm_label": "potenciacao e radiciacao"
+    },
+    {
+      "label": "Fun\u00e7\u00e3o Quadr\u00e1tica",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "funcao_quadratica",
+      "community": 6,
+      "norm_label": "funcao quadratica"
+    },
+    {
+      "label": "Progress\u00e3o Geom\u00e9trica",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "progressao_geometrica",
+      "community": 5,
+      "norm_label": "progressao geometrica"
+    },
+    {
+      "label": "Fun\u00e7\u00e3o Exponencial",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "funcao_exponencial",
+      "community": 5,
+      "norm_label": "funcao exponencial"
+    },
+    {
+      "label": "Progress\u00e3o Aritm\u00e9tica",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "progressao_aritmetica",
+      "community": 4,
+      "norm_label": "progressao aritmetica"
+    },
+    {
+      "label": "Inequa\u00e7\u00e3o",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "inequacao",
+      "community": 0,
+      "norm_label": "inequacao"
+    },
+    {
+      "label": "Sequ\u00eancias e S\u00e9ries",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "sequencias_e_series",
+      "community": 5,
+      "norm_label": "sequencias e series"
+    },
+    {
+      "label": "Matrizes e Determinantes",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "matrizes_e_determinantes",
+      "community": 10,
+      "norm_label": "matrizes e determinantes"
+    },
+    {
+      "label": "Logaritmo",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "logaritmo",
+      "community": 1,
+      "norm_label": "logaritmo"
+    },
+    {
+      "label": "N\u00fameros Racionais",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "numeros_racionais",
+      "community": 11,
+      "norm_label": "numeros racionais"
+    },
+    {
+      "label": "N\u00fameros Inteiros",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "numeros_inteiros",
+      "community": 2,
+      "norm_label": "numeros inteiros"
+    },
+    {
+      "label": "Coordenadas Cartesianas",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "coordenadas_cartesianas",
+      "community": 0,
+      "norm_label": "coordenadas cartesianas"
+    },
+    {
+      "label": "sistemas de numera\u00e7\u00e3o",
+      "file_type": "paper",
+      "source_file": "2.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "sistemas_de_numeracao",
+      "community": 2,
+      "norm_label": "sistemas de numeracao"
+    },
+    {
+      "label": "sistema de equa\u00e7\u00f5es",
+      "file_type": "paper",
+      "source_file": "2.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "sistema_de_equacoes",
+      "community": 1,
+      "norm_label": "sistema de equacoes"
+    },
+    {
+      "label": "fra\u00e7\u00f5es",
+      "file_type": "paper",
+      "source_file": "2.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "fracoes",
+      "community": 1,
+      "norm_label": "fracoes"
+    },
+    {
+      "label": "fun\u00e7\u00f5es trigonom\u00e9tricas",
+      "file_type": "paper",
+      "source_file": "2.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "funcoes_trigonometricas",
+      "community": 4,
+      "norm_label": "funcoes trigonometricas"
+    },
+    {
+      "label": "contagem",
+      "file_type": "paper",
+      "source_file": "2.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "contagem",
+      "community": 2,
+      "norm_label": "contagem"
+    },
+    {
+      "label": "Geometria Anal\u00edtica",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "geometria_analitica",
+      "community": 0,
+      "norm_label": "geometria analitica"
+    },
+    {
+      "label": "Potencia\u00e7\u00e3o",
+      "file_type": "pdf",
+      "source_file": "4.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "potenciacao",
+      "community": 2,
+      "norm_label": "potenciacao"
+    },
+    {
+      "label": "Aritm\u00e9tica",
+      "file_type": "pdf",
+      "source_file": "4.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "aritmetica",
+      "community": 2,
+      "norm_label": "aritmetica"
+    },
+    {
+      "label": "Fun\u00e7\u00e3o Trigonom\u00e9trica",
+      "file_type": "paper",
+      "source_file": "5.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "funcao_trigonometrica",
+      "community": 0,
+      "norm_label": "funcao trigonometrica"
+    },
+    {
+      "label": "MMC e MDC",
+      "file_type": "paper",
+      "source_file": "5.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "mmc_e_mdc",
+      "community": 0,
+      "norm_label": "mmc e mdc"
+    },
+    {
+      "label": "Pot\u00eancias e Ra\u00edzes",
+      "file_type": "paper",
+      "source_file": "5.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "potencias",
+      "community": 2,
+      "norm_label": "potencias e raizes"
+    },
+    {
+      "label": "N\u00fameros Reais",
+      "file_type": "paper",
+      "source_file": "6.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "numeros_reais",
+      "community": 2,
+      "norm_label": "numeros reais"
+    },
+    {
+      "label": "Racioc\u00ednio L\u00f3gico",
+      "file_type": "paper",
+      "source_file": "6.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "raciocinio_logico",
+      "community": 0,
+      "norm_label": "raciocinio logico"
+    },
+    {
+      "label": "Semelhan\u00e7a de Tri\u00e2ngulos",
+      "file_type": "paper",
+      "source_file": "6.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "semelhanca_de_triangulos",
+      "community": 0,
+      "norm_label": "semelhanca de triangulos"
+    },
+    {
+      "label": "Semelhan\u00e7a de Figuras",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "semelhanca_de_figuras",
+      "community": 5,
+      "norm_label": "semelhanca de figuras"
+    },
+    {
+      "label": "Teoria dos Conjuntos",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "teoria_dos_conjuntos",
+      "community": 4,
+      "norm_label": "teoria dos conjuntos"
+    },
+    {
+      "label": "Fun\u00e7\u00e3o Logar\u00edtmica",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "funcao_logaritmica",
+      "community": 5,
+      "norm_label": "funcao logaritmica"
+    },
+    {
+      "label": "Sistemas de Equa\u00e7\u00f5es",
+      "file_type": "paper",
+      "source_file": "",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "sistemas_de_equacoes",
+      "community": 6,
+      "norm_label": "sistemas de equacoes"
+    },
+    {
+      "label": "Behavioral Guidelines",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "behavioral_guidelines",
+      "community": 3,
+      "norm_label": "behavioral guidelines"
+    },
+    {
+      "label": "Think Before Coding",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "think_before_coding",
+      "community": 3,
+      "norm_label": "think before coding"
+    },
+    {
+      "label": "Simplicity First",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "simplicity_first",
+      "community": 9,
+      "norm_label": "simplicity first"
+    },
+    {
+      "label": "Surgical Changes",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "surgical_changes",
+      "community": 8,
+      "norm_label": "surgical changes"
+    },
+    {
+      "label": "Goal-Driven Execution",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "goal_driven_execution",
+      "community": 7,
+      "norm_label": "goal-driven execution"
+    },
+    {
+      "label": "LLM Coding Mistakes",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "llm_coding_mistakes",
+      "community": 3,
+      "norm_label": "llm coding mistakes"
+    },
+    {
+      "label": "Caution Over Speed",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "caution_over_speed",
+      "community": 3,
+      "norm_label": "caution over speed"
+    },
+    {
+      "label": "Explicit Assumptions",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "assumptions",
+      "community": 3,
+      "norm_label": "explicit assumptions"
+    },
+    {
+      "label": "Surface Tradeoffs",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "surface_tradeoffs",
+      "community": 3,
+      "norm_label": "surface tradeoffs"
+    },
+    {
+      "label": "Minimum Code",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "minimum_code",
+      "community": 9,
+      "norm_label": "minimum code"
+    },
+    {
+      "label": "No Speculative Features",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "no_speculative_features",
+      "community": 9,
+      "norm_label": "no speculative features"
+    },
+    {
+      "label": "No Unnecessary Abstractions",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "no_unnecessary_abstractions",
+      "community": 9,
+      "norm_label": "no unnecessary abstractions"
+    },
+    {
+      "label": "Touch Only What You Must",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "touch_only_what_you_must",
+      "community": 8,
+      "norm_label": "touch only what you must"
+    },
+    {
+      "label": "Match Existing Style",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "match_existing_style",
+      "community": 8,
+      "norm_label": "match existing style"
+    },
+    {
+      "label": "No Refactoring Unbroken Code",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "no_refactoring_unbroken",
+      "community": 8,
+      "norm_label": "no refactoring unbroken code"
+    },
+    {
+      "label": "Success Criteria",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "success_criteria",
+      "community": 7,
+      "norm_label": "success criteria"
+    },
+    {
+      "label": "Verifiable Goals",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "verifiable_goals",
+      "community": 7,
+      "norm_label": "verifiable goals"
+    },
+    {
+      "label": "Test-Driven Approach",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "test_driven_approach",
+      "community": 7,
+      "norm_label": "test-driven approach"
+    },
+    {
+      "label": "Clarifying Questions Before Implementation",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "clarifying_questions",
+      "community": 3,
+      "norm_label": "clarifying questions before implementation"
+    }
+  ],
+  "links": [
+    {
+      "relation": "applied_together_with",
+      "weight": 1.0,
+      "confidence": "EXTRACTED",
+      "_src": "interpretacao_de_graficos",
+      "_tgt": "funcao_afim",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q418421",
+      "questions": [
+        "Q785927",
+        "Q785952",
+        "Q788480",
+        "Q785931",
+        "Q785576",
+        "Q755570"
+      ],
+      "id": "e0023",
+      "source": "interpretacao_de_graficos",
+      "target": "funcao_afim"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 2.0,
+      "confidence": "EXTRACTED",
+      "_src": "interpretacao_de_graficos",
+      "_tgt": "estatistica",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q420949,Q418456",
+      "questions": [
+        "Q785927"
+      ],
+      "id": "e0018",
+      "source": "interpretacao_de_graficos",
+      "target": "estatistica"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 3,
+      "confidence": "EXTRACTED",
+      "_src": "funcao_exponencial",
+      "_tgt": "interpretacao_de_graficos",
+      "id": "e0027",
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q599165"
+      ],
+      "source": "interpretacao_de_graficos",
+      "target": "funcao_exponencial",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1.0,
+      "confidence": "EXTRACTED",
+      "_src": "interpretacao_de_graficos",
+      "_tgt": "funcao_quadratica",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q420925",
+      "questions": [
+        "Q824389",
+        "Q746268"
+      ],
+      "source": "interpretacao_de_graficos",
+      "target": "funcao_quadratica"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "_src": "interpretacao_de_graficos",
+      "_tgt": "trigonometria",
+      "confidence_score": 0.9,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q467759"
+      ],
+      "questions": [
+        "Q788464",
+        "Q755184",
+        "Q785969"
+      ],
+      "id": "e0067",
+      "source": "interpretacao_de_graficos",
+      "target": "trigonometria"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 5.0,
+      "confidence": "EXTRACTED",
+      "_src": "interpretacao_de_graficos",
+      "_tgt": "razao_e_proporcao",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q421003,Q421010,Q418530,Q492009,Q418648",
+      "questions": [
+        "Q785521",
+        "Q785544",
+        "Q785546",
+        "Q755568",
+        "Q824441"
+      ],
+      "id": "e0066",
+      "source": "interpretacao_de_graficos",
+      "target": "razao_e_proporcao"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 2.0,
+      "confidence": "EXTRACTED",
+      "_src": "interpretacao_de_graficos",
+      "_tgt": "leitura_de_tabelas",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q420948,Q418421",
+      "id": "e0063",
+      "source": "interpretacao_de_graficos",
+      "target": "leitura_de_tabelas"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "_src": "interpretacao_de_graficos",
+      "_tgt": "logaritmo",
+      "id": "e0064",
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q407797"
+      ],
+      "source": "interpretacao_de_graficos",
+      "target": "logaritmo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1.0,
+      "confidence": "EXTRACTED",
+      "_src": "geometria_espacial",
+      "_tgt": "interpretacao_de_graficos",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q418616",
+      "source": "interpretacao_de_graficos",
+      "target": "geometria_espacial"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 5.0,
+      "confidence": "EXTRACTED",
+      "_src": "interpretacao_de_graficos",
+      "_tgt": "porcentagem",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q420948,Q418596,Q492010,Q492009,Q418616",
+      "questions": [
+        "Q788528",
+        "Q806490"
+      ],
+      "id": "e0065",
+      "source": "interpretacao_de_graficos",
+      "target": "porcentagem"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "_src": "geometria_plana",
+      "_tgt": "interpretacao_de_graficos",
+      "id": "e0047",
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q489802"
+      ],
+      "source": "interpretacao_de_graficos",
+      "target": "geometria_plana",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 5,
+      "confidence": "EXTRACTED",
+      "_src": "progressao_aritmetica",
+      "_tgt": "interpretacao_de_graficos",
+      "confidence_score": 1.0,
+      "source_file": "2.pdf",
+      "source_location": "Q807426",
+      "source": "interpretacao_de_graficos",
+      "target": "progressao_aritmetica"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "2.pdf",
+      "source_location": "Q824008",
+      "weight": 1,
+      "_src": "interpretacao_de_graficos",
+      "_tgt": "inequacao",
+      "source": "interpretacao_de_graficos",
+      "target": "inequacao"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "2.pdf",
+      "source_location": "Q806491",
+      "weight": 1,
+      "_src": "funcoes_trigonometricas",
+      "_tgt": "interpretacao_de_graficos",
+      "source": "interpretacao_de_graficos",
+      "target": "funcoes_trigonometricas"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "6.pdf",
+      "source_location": "Q1059",
+      "weight": 1.0,
+      "_src": "interpretacao_de_graficos",
+      "_tgt": "progressao_geometrica",
+      "source": "interpretacao_de_graficos",
+      "target": "progressao_geometrica"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "6.pdf",
+      "source_location": "Q1126",
+      "weight": 1.0,
+      "_src": "interpretacao_de_graficos",
+      "_tgt": "matematica_financeira",
+      "source": "interpretacao_de_graficos",
+      "target": "matematica_financeira"
+    },
+    {
+      "relation": "co-occurs_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "4.pdf",
+      "source_location": "Q632,Q653,Q797",
+      "weight": 3,
+      "_src": "interpretacao_de_graficos",
+      "_tgt": "aritmetica",
+      "source": "interpretacao_de_graficos",
+      "target": "aritmetica"
+    },
+    {
+      "id": "e0011",
+      "relation": "applied_together_with",
+      "weight": 1,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q262378"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "equacao",
+      "_tgt": "interpretacao_de_graficos",
+      "source": "interpretacao_de_graficos",
+      "target": "equacao",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "e0033",
+      "relation": "applied_together_with",
+      "weight": 1,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q558642"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "funcao_trigonometrica",
+      "_tgt": "interpretacao_de_graficos",
+      "source": "interpretacao_de_graficos",
+      "target": "funcao_trigonometrica",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "e0053",
+      "relation": "applied_together_with",
+      "weight": 4.0,
+      "source_file": "9.pdf",
+      "source_location": "Q418585,Q418616,Q418625,Q420961",
+      "confidence": "EXTRACTED",
+      "_src": "interpretacao_de_graficos",
+      "_tgt": "grandezas_e_medidas",
+      "confidence_score": 1.0,
+      "source": "interpretacao_de_graficos",
+      "target": "grandezas_e_medidas"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "7.pdf",
+      "source_location": null,
+      "weight": 8,
+      "_src": "probabilidade",
+      "_tgt": "interpretacao_de_graficos",
+      "source": "interpretacao_de_graficos",
+      "target": "probabilidade"
+    },
+    {
+      "weight": 1,
+      "relation": "applied_together_with",
+      "_src": "funcao_logaritmica",
+      "_tgt": "interpretacao_de_graficos",
+      "source": "interpretacao_de_graficos",
+      "target": "funcao_logaritmica",
+      "confidence_score": 1.0
+    },
+    {
+      "weight": 1,
+      "relation": "applied_together_with",
+      "_src": "teoria_dos_conjuntos",
+      "_tgt": "interpretacao_de_graficos",
+      "source": "interpretacao_de_graficos",
+      "target": "teoria_dos_conjuntos",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 6.0,
+      "confidence": "EXTRACTED",
+      "_src": "razao_e_proporcao",
+      "_tgt": "grandezas_e_medidas",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q418617,Q418621,Q418628,Q491645,Q420933,Q420650",
+      "questions": [
+        "Q806091",
+        "Q806111",
+        "Q806130",
+        "Q807417",
+        "Q806483",
+        "Q806488",
+        "Q824372",
+        "Q788471",
+        "Q785941",
+        "Q785925",
+        "Q785490",
+        "Q785495",
+        "Q785496",
+        "Q755555"
+      ],
+      "id": "e0059",
+      "source": "razao_e_proporcao",
+      "target": "grandezas_e_medidas"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 6.0,
+      "confidence": "EXTRACTED",
+      "_src": "porcentagem",
+      "_tgt": "razao_e_proporcao",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q418584,Q492026,Q492009,Q491982,Q420942,Q418630",
+      "questions": [
+        "Q785493",
+        "Q785537",
+        "Q746239",
+        "Q755561",
+        "Q824448"
+      ],
+      "id": "e0078",
+      "source": "razao_e_proporcao",
+      "target": "porcentagem"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 2.0,
+      "confidence": "EXTRACTED",
+      "_src": "geometria_plana",
+      "_tgt": "razao_e_proporcao",
+      "questions": [
+        "Q807424",
+        "Q785483",
+        "Q788507",
+        "Q788512",
+        "Q746547",
+        "Q755559"
+      ],
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q420962,Q491987",
+      "id": "e0050",
+      "source": "razao_e_proporcao",
+      "target": "geometria_plana"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 2.0,
+      "confidence": "EXTRACTED",
+      "_src": "leitura_de_tabelas",
+      "_tgt": "razao_e_proporcao",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q418614,Q492021",
+      "questions": [
+        "Q806104",
+        "Q806413",
+        "Q788442",
+        "Q788516",
+        "Q785491",
+        "Q755064",
+        "Q755087",
+        "Q746089",
+        "Q807434"
+      ],
+      "id": "e0070",
+      "source": "razao_e_proporcao",
+      "target": "leitura_de_tabelas"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 2.0,
+      "confidence": "EXTRACTED",
+      "_src": "razao_e_proporcao",
+      "_tgt": "equacao",
+      "questions": [
+        "Q824384",
+        "Q746270"
+      ],
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q420928,Q420660",
+      "id": "e0015",
+      "source": "razao_e_proporcao",
+      "target": "equacao"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1.0,
+      "confidence": "EXTRACTED",
+      "_src": "geometria_espacial",
+      "_tgt": "razao_e_proporcao",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q418587",
+      "questions": [
+        "Q806112",
+        "Q806089",
+        "Q788476",
+        "Q746085"
+      ],
+      "id": "e0043",
+      "source": "razao_e_proporcao",
+      "target": "geometria_espacial"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "_src": "potenciacao_e_radicacao",
+      "_tgt": "razao_e_proporcao",
+      "source": "razao_e_proporcao",
+      "target": "potenciacao_e_radicacao",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1.0,
+      "confidence": "EXTRACTED",
+      "_src": "funcao_afim",
+      "_tgt": "razao_e_proporcao",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q420955",
+      "questions": [
+        "Q755558",
+        "Q746093",
+        "Q806422"
+      ],
+      "id": "e0026",
+      "source": "razao_e_proporcao",
+      "target": "funcao_afim"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q599142"
+      ],
+      "weight": 7,
+      "_src": "matematica_financeira",
+      "_tgt": "razao_e_proporcao",
+      "id": "e0075",
+      "source": "razao_e_proporcao",
+      "target": "matematica_financeira"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "2.pdf",
+      "source_location": "Q807432",
+      "weight": 1,
+      "_src": "razao_e_proporcao",
+      "_tgt": "fracoes",
+      "source": "razao_e_proporcao",
+      "target": "fracoes"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "7.pdf",
+      "source_location": null,
+      "weight": 2,
+      "_src": "sistema_de_equacoes",
+      "_tgt": "razao_e_proporcao",
+      "source": "razao_e_proporcao",
+      "target": "sistema_de_equacoes"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "questions": [
+        "Q746244"
+      ],
+      "_src": "geometria_analitica",
+      "_tgt": "razao_e_proporcao",
+      "id": "e0038",
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q599158"
+      ],
+      "source": "razao_e_proporcao",
+      "target": "geometria_analitica",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1.0,
+      "confidence": "EXTRACTED",
+      "questions": [
+        "Q785542"
+      ],
+      "_src": "inequacao",
+      "_tgt": "razao_e_proporcao",
+      "confidence_score": 1.0,
+      "source_file": "6.pdf",
+      "source_location": "Q1140",
+      "id": "e0062",
+      "source": "razao_e_proporcao",
+      "target": "inequacao"
+    },
+    {
+      "id": "e0021",
+      "relation": "applied_together_with",
+      "weight": 4,
+      "source_file": "7.pdf",
+      "source_location": null,
+      "confidence": "EXTRACTED",
+      "_src": "razao_e_proporcao",
+      "_tgt": "estatistica",
+      "confidence_score": 1.0,
+      "source": "razao_e_proporcao",
+      "target": "estatistica"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "7.pdf",
+      "source_location": null,
+      "weight": 3,
+      "_src": "probabilidade",
+      "_tgt": "razao_e_proporcao",
+      "source": "razao_e_proporcao",
+      "target": "probabilidade"
+    },
+    {
+      "weight": 2,
+      "relation": "applied_together_with",
+      "_src": "semelhanca_de_figuras",
+      "_tgt": "razao_e_proporcao",
+      "source": "razao_e_proporcao",
+      "target": "semelhanca_de_figuras",
+      "confidence_score": 1.0
+    },
+    {
+      "weight": 2,
+      "relation": "applied_together_with",
+      "_src": "aritmetica",
+      "_tgt": "razao_e_proporcao",
+      "source": "razao_e_proporcao",
+      "target": "aritmetica",
+      "confidence_score": 1.0
+    },
+    {
+      "weight": 1,
+      "relation": "applied_together_with",
+      "_src": "sistemas_de_equacoes",
+      "_tgt": "razao_e_proporcao",
+      "source": "razao_e_proporcao",
+      "target": "sistemas_de_equacoes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 7,
+      "confidence": "EXTRACTED",
+      "_src": "geometria_plana",
+      "_tgt": "trigonometria",
+      "confidence_score": 1.0,
+      "source_file": "7.pdf",
+      "source_location": null,
+      "questions": [
+        "Q806124",
+        "Q788486",
+        "Q807431"
+      ],
+      "id": "e0051",
+      "source": "geometria_plana",
+      "target": "trigonometria"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 6,
+      "confidence": "EXTRACTED",
+      "_src": "geometria_plana",
+      "_tgt": "grandezas_e_medidas",
+      "confidence_score": 1.0,
+      "source_file": "6.pdf",
+      "source_location": "Q1010",
+      "questions": [
+        "Q785469",
+        "Q806455"
+      ],
+      "id": "e0045",
+      "source": "geometria_plana",
+      "target": "grandezas_e_medidas"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "_src": "geometria_plana",
+      "_tgt": "inequacao",
+      "id": "e0046",
+      "source_file": "7.pdf",
+      "source_location": null,
+      "confidence_score": 1.0,
+      "source": "geometria_plana",
+      "target": "inequacao"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "_src": "geometria_plana",
+      "_tgt": "leitura_de_tabelas",
+      "id": "e0048",
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q467700"
+      ],
+      "source": "geometria_plana",
+      "target": "leitura_de_tabelas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "_src": "geometria_espacial",
+      "_tgt": "geometria_plana",
+      "confidence_score": 1.0,
+      "source_file": "7.pdf",
+      "source_location": null,
+      "questions": [
+        "Q806123",
+        "Q788444",
+        "Q755569",
+        "Q806418"
+      ],
+      "id": "e0039",
+      "source": "geometria_plana",
+      "target": "geometria_espacial"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "_src": "coordenadas_cartesianas",
+      "_tgt": "geometria_plana",
+      "source": "geometria_plana",
+      "target": "coordenadas_cartesianas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "2.pdf",
+      "source_location": "Q806106",
+      "weight": 1,
+      "_src": "progressao_geometrica",
+      "_tgt": "geometria_plana",
+      "questions": [
+        "Q788514"
+      ],
+      "source": "geometria_plana",
+      "target": "progressao_geometrica"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q420928",
+      "weight": 1.0,
+      "_src": "equacao",
+      "_tgt": "geometria_plana",
+      "id": "e0008",
+      "source": "geometria_plana",
+      "target": "equacao"
+    },
+    {
+      "relation": "co-occurs_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "4.pdf",
+      "source_location": "Q650,Q652,Q787",
+      "weight": 3,
+      "_src": "geometria_plana",
+      "_tgt": "funcao_quadratica",
+      "source": "geometria_plana",
+      "target": "funcao_quadratica"
+    },
+    {
+      "relation": "co-occurs_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "4.pdf",
+      "source_location": "Q632,Q800",
+      "weight": 2,
+      "_src": "geometria_plana",
+      "_tgt": "aritmetica",
+      "source": "geometria_plana",
+      "target": "aritmetica"
+    },
+    {
+      "id": "e0035",
+      "relation": "applied_together_with",
+      "weight": 2,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q599173"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "geometria_analitica",
+      "_tgt": "geometria_plana",
+      "source": "geometria_plana",
+      "target": "geometria_analitica",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "e0049",
+      "relation": "applied_together_with",
+      "weight": 1,
+      "source_file": "7.pdf",
+      "source_location": null,
+      "confidence": "EXTRACTED",
+      "_src": "geometria_plana",
+      "_tgt": "porcentagem",
+      "confidence_score": 1.0,
+      "source": "geometria_plana",
+      "target": "porcentagem"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "6.pdf",
+      "source_location": "Q1131",
+      "weight": 2.0,
+      "_src": "geometria_plana",
+      "_tgt": "semelhanca_de_triangulos",
+      "source": "geometria_plana",
+      "target": "semelhanca_de_triangulos"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "6.pdf",
+      "source_location": "Q1063",
+      "weight": 1.0,
+      "_src": "analise_combinatoria",
+      "_tgt": "geometria_plana",
+      "source": "geometria_plana",
+      "target": "analise_combinatoria"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q491987",
+      "weight": 1.0,
+      "_src": "probabilidade",
+      "_tgt": "geometria_plana",
+      "source": "geometria_plana",
+      "target": "probabilidade"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "7.pdf",
+      "source_location": null,
+      "weight": 3,
+      "_src": "funcao_afim",
+      "_tgt": "geometria_plana",
+      "source": "geometria_plana",
+      "target": "funcao_afim"
+    },
+    {
+      "weight": 3,
+      "relation": "applied_together_with",
+      "_src": "geometria_plana",
+      "_tgt": "semelhanca_de_figuras",
+      "source": "geometria_plana",
+      "target": "semelhanca_de_figuras",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 2.0,
+      "confidence": "EXTRACTED",
+      "_src": "leitura_de_tabelas",
+      "_tgt": "estatistica",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q492021,Q492025",
+      "questions": [
+        "Q806131",
+        "Q788456",
+        "Q788454",
+        "Q788518",
+        "Q785525",
+        "Q785541",
+        "Q755094",
+        "Q755562",
+        "Q755565",
+        "Q746271",
+        "Q824029"
+      ],
+      "id": "e0019",
+      "source": "estatistica",
+      "target": "leitura_de_tabelas"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1.0,
+      "confidence": "EXTRACTED",
+      "_src": "porcentagem",
+      "_tgt": "estatistica",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q418596",
+      "id": "e0020",
+      "source": "estatistica",
+      "target": "porcentagem"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "_src": "equacao",
+      "_tgt": "estatistica",
+      "confidence_score": 0.9,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q262309"
+      ],
+      "id": "e0005",
+      "source": "estatistica",
+      "target": "equacao"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1.0,
+      "confidence": "EXTRACTED",
+      "questions": [
+        "Q788511"
+      ],
+      "_src": "estatistica",
+      "_tgt": "progressao_aritmetica",
+      "confidence_score": 1.0,
+      "source_file": "6.pdf",
+      "source_location": "Q1012",
+      "source": "estatistica",
+      "target": "progressao_aritmetica"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "questions": [
+        "Q746236"
+      ],
+      "_src": "probabilidade",
+      "_tgt": "estatistica",
+      "source": "estatistica",
+      "target": "probabilidade",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "questions": [
+        "Q785927"
+      ],
+      "_src": "estatistica",
+      "_tgt": "funcao_afim",
+      "source": "estatistica",
+      "target": "funcao_afim",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "e0017",
+      "relation": "applied_together_with",
+      "weight": 1,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q599172"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "estatistica",
+      "_tgt": "grandezas_e_medidas",
+      "source": "estatistica",
+      "target": "grandezas_e_medidas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1.0,
+      "confidence": "EXTRACTED",
+      "_src": "funcao_afim",
+      "_tgt": "leitura_de_tabelas",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q420984",
+      "questions": [
+        "Q788480",
+        "Q788482"
+      ],
+      "id": "e0024",
+      "source": "leitura_de_tabelas",
+      "target": "funcao_afim"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "6.pdf",
+      "source_location": "Q1103",
+      "weight": 2.0,
+      "_src": "leitura_de_tabelas",
+      "_tgt": "progressao_aritmetica",
+      "questions": [
+        "Q788478",
+        "Q785539"
+      ],
+      "source": "leitura_de_tabelas",
+      "target": "progressao_aritmetica"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q420948,Q492025",
+      "weight": 2.0,
+      "_src": "porcentagem",
+      "_tgt": "leitura_de_tabelas",
+      "questions": [
+        "Q788483",
+        "Q807397",
+        "Q824377",
+        "Q746272",
+        "Q755176",
+        "Q755567",
+        "Q746092",
+        "Q788469"
+      ],
+      "id": "e0069",
+      "source": "leitura_de_tabelas",
+      "target": "porcentagem"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "2.pdf",
+      "source_location": "Q806101",
+      "weight": 1,
+      "_src": "funcao_exponencial",
+      "_tgt": "leitura_de_tabelas",
+      "source": "leitura_de_tabelas",
+      "target": "funcao_exponencial"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "7.pdf",
+      "source_location": null,
+      "weight": 9,
+      "_src": "probabilidade",
+      "_tgt": "leitura_de_tabelas",
+      "source": "leitura_de_tabelas",
+      "target": "probabilidade"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1.0,
+      "confidence": "EXTRACTED",
+      "questions": [
+        "Q755086"
+      ],
+      "_src": "leitura_de_tabelas",
+      "_tgt": "matematica_financeira",
+      "id": "e0068",
+      "source_file": "6.pdf",
+      "source_location": "Q1078",
+      "confidence_score": 1.0,
+      "source": "leitura_de_tabelas",
+      "target": "matematica_financeira"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "7.pdf",
+      "source_location": null,
+      "weight": 1,
+      "_src": "equacao",
+      "_tgt": "leitura_de_tabelas",
+      "id": "e0012",
+      "source": "leitura_de_tabelas",
+      "target": "equacao"
+    },
+    {
+      "id": "e0002",
+      "relation": "applied_together_with",
+      "weight": 1,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q407790"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "analise_combinatoria",
+      "_tgt": "leitura_de_tabelas",
+      "source": "leitura_de_tabelas",
+      "target": "analise_combinatoria",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "e0032",
+      "relation": "applied_together_with",
+      "weight": 1,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q407817"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "funcao_quadratica",
+      "_tgt": "leitura_de_tabelas",
+      "source": "leitura_de_tabelas",
+      "target": "funcao_quadratica",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "e0054",
+      "relation": "applied_together_with",
+      "weight": 2.0,
+      "source_file": "9.pdf",
+      "source_location": "Q420984,Q420961",
+      "confidence": "EXTRACTED",
+      "_src": "leitura_de_tabelas",
+      "_tgt": "grandezas_e_medidas",
+      "confidence_score": 1.0,
+      "source": "leitura_de_tabelas",
+      "target": "grandezas_e_medidas"
+    },
+    {
+      "id": "e0060",
+      "relation": "applied_together_with",
+      "weight": 1.0,
+      "source_file": "6.pdf",
+      "source_location": "Q1008",
+      "confidence": "EXTRACTED",
+      "_src": "inequacao",
+      "_tgt": "leitura_de_tabelas",
+      "confidence_score": 1.0,
+      "source": "leitura_de_tabelas",
+      "target": "inequacao"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1.0,
+      "confidence": "EXTRACTED",
+      "_src": "equacao",
+      "_tgt": "porcentagem",
+      "confidence_score": 1.0,
+      "source_file": "6.pdf",
+      "source_location": "Q1043",
+      "id": "e0013",
+      "source": "porcentagem",
+      "target": "equacao"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 2.0,
+      "confidence": "EXTRACTED",
+      "_src": "porcentagem",
+      "_tgt": "grandezas_e_medidas",
+      "questions": [
+        "Q788452",
+        "Q806419"
+      ],
+      "id": "e0056",
+      "source_file": "9.pdf",
+      "source_location": "Q418630,Q492009",
+      "confidence_score": 1.0,
+      "source": "porcentagem",
+      "target": "grandezas_e_medidas"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1.0,
+      "confidence": "EXTRACTED",
+      "_src": "porcentagem",
+      "_tgt": "inequacao",
+      "id": "e0061",
+      "source_file": "9.pdf",
+      "source_location": "Q420964",
+      "confidence_score": 1.0,
+      "source": "porcentagem",
+      "target": "inequacao"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1.0,
+      "confidence": "EXTRACTED",
+      "_src": "geometria_espacial",
+      "_tgt": "porcentagem",
+      "id": "e0042",
+      "source_file": "9.pdf",
+      "source_location": "Q491982",
+      "confidence_score": 1.0,
+      "source": "porcentagem",
+      "target": "geometria_espacial"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "7.pdf",
+      "source_location": null,
+      "weight": 5,
+      "_src": "matematica_financeira",
+      "_tgt": "porcentagem",
+      "questions": [
+        "Q785522"
+      ],
+      "id": "e0072",
+      "source": "porcentagem",
+      "target": "matematica_financeira"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "4.pdf",
+      "source_location": "Q781",
+      "weight": 1,
+      "_src": "aritmetica",
+      "_tgt": "porcentagem",
+      "source": "porcentagem",
+      "target": "aritmetica"
+    },
+    {
+      "id": "e0025",
+      "relation": "applied_together_with",
+      "weight": 1,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q467683"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "funcao_afim",
+      "_tgt": "porcentagem",
+      "source": "porcentagem",
+      "target": "funcao_afim",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "e0076",
+      "relation": "applied_together_with",
+      "weight": 1,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q467692"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "porcentagem",
+      "_tgt": "potencias",
+      "source": "porcentagem",
+      "target": "potencias",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "e0077",
+      "relation": "applied_together_with",
+      "weight": 1,
+      "source_file": "7.pdf",
+      "source_location": null,
+      "confidence": "EXTRACTED",
+      "_src": "probabilidade",
+      "_tgt": "porcentagem",
+      "confidence_score": 1.0,
+      "source": "porcentagem",
+      "target": "probabilidade"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "6.pdf",
+      "source_location": "Q1194",
+      "weight": 1.0,
+      "_src": "funcao_exponencial",
+      "_tgt": "porcentagem",
+      "source": "porcentagem",
+      "target": "funcao_exponencial"
+    },
+    {
+      "relation": "co-occurs_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "_src": "probabilidade",
+      "_tgt": "equacao",
+      "confidence_score": 0.9,
+      "source_file": "4.pdf",
+      "source_location": "Q603",
+      "source": "equacao",
+      "target": "probabilidade"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1.0,
+      "confidence": "EXTRACTED",
+      "_src": "funcao_afim",
+      "_tgt": "equacao",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q418509",
+      "source": "equacao",
+      "target": "funcao_afim"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "_src": "analise_combinatoria",
+      "_tgt": "equacao",
+      "confidence_score": 1.0,
+      "source_file": "2.pdf",
+      "source_location": "Q807423",
+      "source": "equacao",
+      "target": "analise_combinatoria"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1.0,
+      "confidence": "EXTRACTED",
+      "_src": "equacao",
+      "_tgt": "inequacao",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q420905",
+      "id": "e0010",
+      "source": "equacao",
+      "target": "inequacao"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "_src": "grandezas_e_medidas",
+      "_tgt": "equacao",
+      "id": "e0009",
+      "source_file": "7.pdf",
+      "source_location": null,
+      "confidence_score": 1.0,
+      "source": "equacao",
+      "target": "grandezas_e_medidas"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q407789",
+        "Q467702",
+        "Q467761",
+        "Q467773",
+        "Q407818"
+      ],
+      "weight": 5,
+      "_src": "equacao",
+      "_tgt": "geometria_espacial",
+      "id": "e0007",
+      "source": "equacao",
+      "target": "geometria_espacial"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q420909",
+      "weight": 1.0,
+      "_src": "matematica_financeira",
+      "_tgt": "equacao",
+      "source": "equacao",
+      "target": "matematica_financeira"
+    },
+    {
+      "relation": "co-occurs_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "4.pdf",
+      "source_location": "Q609,Q633",
+      "weight": 2,
+      "_src": "equacao",
+      "_tgt": "aritmetica",
+      "source": "equacao",
+      "target": "aritmetica"
+    },
+    {
+      "id": "e0006",
+      "relation": "applied_together_with",
+      "weight": 1,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q492571"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "equacao",
+      "_tgt": "funcao_trigonometrica",
+      "source": "equacao",
+      "target": "funcao_trigonometrica",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "e0014",
+      "relation": "applied_together_with",
+      "weight": 2,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q558623"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "progressao_aritmetica",
+      "_tgt": "equacao",
+      "source": "equacao",
+      "target": "progressao_aritmetica",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "e0016",
+      "relation": "applied_together_with",
+      "weight": 1,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q492571"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "equacao",
+      "_tgt": "trigonometria",
+      "source": "equacao",
+      "target": "trigonometria",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "6.pdf",
+      "source_location": "Q1003",
+      "weight": 7,
+      "_src": "funcao_quadratica",
+      "_tgt": "equacao",
+      "source": "equacao",
+      "target": "funcao_quadratica"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "7.pdf",
+      "source_location": null,
+      "weight": 1,
+      "_src": "sistema_de_equacoes",
+      "_tgt": "equacao",
+      "source": "equacao",
+      "target": "sistema_de_equacoes"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "6.pdf",
+      "source_location": "Q1057",
+      "weight": 1.0,
+      "_src": "equacao",
+      "_tgt": "progressao_geometrica",
+      "source": "equacao",
+      "target": "progressao_geometrica"
+    },
+    {
+      "weight": 2,
+      "relation": "applied_together_with",
+      "_src": "sistemas_de_equacoes",
+      "_tgt": "equacao",
+      "source": "equacao",
+      "target": "sistemas_de_equacoes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1.0,
+      "confidence": "EXTRACTED",
+      "_src": "probabilidade",
+      "_tgt": "analise_combinatoria",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q491978",
+      "questions": [
+        "Q806129",
+        "Q824031",
+        "Q824411",
+        "Q755090",
+        "Q746233"
+      ],
+      "id": "e0004",
+      "source": "analise_combinatoria",
+      "target": "probabilidade"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "_src": "analise_combinatoria",
+      "_tgt": "numeros_inteiros",
+      "source": "analise_combinatoria",
+      "target": "numeros_inteiros",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "_src": "analise_combinatoria",
+      "_tgt": "grandezas_e_medidas",
+      "confidence_score": 1.0,
+      "source_file": "7.pdf",
+      "source_location": null,
+      "source": "analise_combinatoria",
+      "target": "grandezas_e_medidas"
+    },
+    {
+      "id": "e0001",
+      "relation": "applied_together_with",
+      "weight": 1,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q407792"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "analise_combinatoria",
+      "_tgt": "geometria_espacial",
+      "source": "analise_combinatoria",
+      "target": "geometria_espacial",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "e0003",
+      "relation": "applied_together_with",
+      "weight": 1,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q555496"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "analise_combinatoria",
+      "_tgt": "potencias",
+      "source": "analise_combinatoria",
+      "target": "potencias",
+      "confidence_score": 1.0
+    },
+    {
+      "weight": 4,
+      "relation": "applied_together_with",
+      "_src": "analise_combinatoria",
+      "_tgt": "potenciacao",
+      "source": "analise_combinatoria",
+      "target": "potenciacao",
+      "confidence_score": 1.0
+    },
+    {
+      "weight": 2,
+      "relation": "applied_together_with",
+      "_src": "analise_combinatoria",
+      "_tgt": "sequencias_e_series",
+      "source": "analise_combinatoria",
+      "target": "sequencias_e_series",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q418595",
+      "weight": 1.0,
+      "_src": "analise_combinatoria",
+      "_tgt": "raciocinio_logico",
+      "source": "analise_combinatoria",
+      "target": "raciocinio_logico"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "2.pdf",
+      "source_location": "Q806103",
+      "weight": 1,
+      "_src": "funcao_afim",
+      "_tgt": "geometria_espacial",
+      "source": "funcao_afim",
+      "target": "geometria_espacial"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "6.pdf",
+      "source_location": "Q1008",
+      "weight": 2.0,
+      "_src": "funcao_afim",
+      "_tgt": "inequacao",
+      "source": "funcao_afim",
+      "target": "inequacao"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "2.pdf",
+      "source_location": "Q806094",
+      "weight": 2,
+      "_src": "funcao_afim",
+      "_tgt": "progressao_aritmetica",
+      "source": "funcao_afim",
+      "target": "progressao_aritmetica"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "2.pdf",
+      "source_location": "Q806492",
+      "weight": 6,
+      "_src": "funcao_afim",
+      "_tgt": "matematica_financeira",
+      "source": "funcao_afim",
+      "target": "matematica_financeira"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "questions": [
+        "Q806100"
+      ],
+      "_src": "logaritmo",
+      "_tgt": "funcao_afim",
+      "source": "funcao_afim",
+      "target": "logaritmo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 3,
+      "confidence": "EXTRACTED",
+      "questions": [
+        "Q788517"
+      ],
+      "_src": "funcao_afim",
+      "_tgt": "geometria_analitica",
+      "source": "funcao_afim",
+      "target": "geometria_analitica",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q420984,Q420955",
+      "weight": 2.0,
+      "_src": "funcao_afim",
+      "_tgt": "grandezas_e_medidas",
+      "id": "e0022",
+      "source": "funcao_afim",
+      "target": "grandezas_e_medidas"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "4.pdf",
+      "source_location": "Q777",
+      "weight": 5,
+      "_src": "funcao_quadratica",
+      "_tgt": "funcao_afim",
+      "source": "funcao_afim",
+      "target": "funcao_quadratica"
+    },
+    {
+      "weight": 1,
+      "relation": "applied_together_with",
+      "_src": "sistemas_de_equacoes",
+      "_tgt": "funcao_afim",
+      "source": "funcao_afim",
+      "target": "sistemas_de_equacoes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q492519",
+        "Q492538"
+      ],
+      "weight": 2,
+      "_src": "grandezas_e_medidas",
+      "_tgt": "inequacao",
+      "id": "e0052",
+      "source": "grandezas_e_medidas",
+      "target": "inequacao"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q418616",
+      "weight": 1.0,
+      "_src": "geometria_espacial",
+      "_tgt": "grandezas_e_medidas",
+      "questions": [
+        "Q755095",
+        "Q755557"
+      ],
+      "id": "e0040",
+      "source": "grandezas_e_medidas",
+      "target": "geometria_espacial"
+    },
+    {
+      "relation": "co-occurs_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "4.pdf",
+      "source_location": "Q761",
+      "weight": 1,
+      "_src": "grandezas_e_medidas",
+      "_tgt": "aritmetica",
+      "source": "grandezas_e_medidas",
+      "target": "aritmetica"
+    },
+    {
+      "id": "e0036",
+      "relation": "applied_together_with",
+      "weight": 2,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q407815",
+        "Q489815"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "geometria_analitica",
+      "_tgt": "grandezas_e_medidas",
+      "source": "grandezas_e_medidas",
+      "target": "geometria_analitica",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "e0055",
+      "relation": "applied_together_with",
+      "weight": 1,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q492545"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "grandezas_e_medidas",
+      "_tgt": "mmc_e_mdc",
+      "source": "grandezas_e_medidas",
+      "target": "mmc_e_mdc",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "e0057",
+      "relation": "applied_together_with",
+      "weight": 2,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q599147",
+        "Q492533"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "grandezas_e_medidas",
+      "_tgt": "potencias",
+      "source": "grandezas_e_medidas",
+      "target": "potencias",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "e0058",
+      "relation": "applied_together_with",
+      "weight": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q420897",
+      "confidence": "EXTRACTED",
+      "_src": "progressao_aritmetica",
+      "_tgt": "grandezas_e_medidas",
+      "confidence_score": 1.0,
+      "source": "grandezas_e_medidas",
+      "target": "progressao_aritmetica"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "6.pdf",
+      "source_location": "Q1185",
+      "weight": 1.0,
+      "_src": "grandezas_e_medidas",
+      "_tgt": "potenciacao",
+      "source": "grandezas_e_medidas",
+      "target": "potenciacao"
+    },
+    {
+      "weight": 2,
+      "relation": "applied_together_with",
+      "_src": "trigonometria",
+      "_tgt": "grandezas_e_medidas",
+      "source": "grandezas_e_medidas",
+      "target": "trigonometria",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q492002",
+      "weight": 1.0,
+      "_src": "probabilidade",
+      "_tgt": "grandezas_e_medidas",
+      "source": "grandezas_e_medidas",
+      "target": "probabilidade"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q418621",
+      "weight": 1.0,
+      "_src": "grandezas_e_medidas",
+      "_tgt": "raciocinio_logico",
+      "source": "grandezas_e_medidas",
+      "target": "raciocinio_logico"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q420963",
+      "weight": 1.0,
+      "_src": "teoria_dos_conjuntos",
+      "_tgt": "grandezas_e_medidas",
+      "source": "grandezas_e_medidas",
+      "target": "teoria_dos_conjuntos"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "_src": "geometria_espacial",
+      "_tgt": "potenciacao_e_radicacao",
+      "source": "geometria_espacial",
+      "target": "potenciacao_e_radicacao",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "6.pdf",
+      "source_location": "Q1149",
+      "weight": 4,
+      "_src": "geometria_espacial",
+      "_tgt": "trigonometria",
+      "questions": [
+        "Q788463",
+        "Q746275"
+      ],
+      "id": "e0044",
+      "source": "geometria_espacial",
+      "target": "trigonometria"
+    },
+    {
+      "id": "e0041",
+      "relation": "applied_together_with",
+      "weight": 1,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q262304"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "geometria_espacial",
+      "_tgt": "inequacao",
+      "source": "geometria_espacial",
+      "target": "inequacao",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "7.pdf",
+      "source_location": null,
+      "weight": 1,
+      "_src": "matematica_financeira",
+      "_tgt": "geometria_espacial",
+      "source": "geometria_espacial",
+      "target": "matematica_financeira"
+    },
+    {
+      "weight": 5,
+      "relation": "applied_together_with",
+      "_src": "funcao_quadratica",
+      "_tgt": "geometria_espacial",
+      "source": "geometria_espacial",
+      "target": "funcao_quadratica",
+      "confidence_score": 1.0
+    },
+    {
+      "weight": 2,
+      "relation": "applied_together_with",
+      "_src": "geometria_espacial",
+      "_tgt": "semelhanca_de_figuras",
+      "source": "geometria_espacial",
+      "target": "semelhanca_de_figuras",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "e0073",
+      "relation": "applied_together_with",
+      "weight": 1,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q492546"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "matematica_financeira",
+      "_tgt": "probabilidade",
+      "source": "probabilidade",
+      "target": "matematica_financeira",
+      "confidence_score": 1.0
+    },
+    {
+      "weight": 3,
+      "relation": "applied_together_with",
+      "_src": "teoria_dos_conjuntos",
+      "_tgt": "probabilidade",
+      "source": "probabilidade",
+      "target": "teoria_dos_conjuntos",
+      "confidence_score": 1.0
+    },
+    {
+      "weight": 2,
+      "relation": "applied_together_with",
+      "_src": "progressao_geometrica",
+      "_tgt": "probabilidade",
+      "source": "probabilidade",
+      "target": "progressao_geometrica",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "questions": [
+        "Q746084"
+      ],
+      "_src": "geometria_analitica",
+      "_tgt": "trigonometria",
+      "source": "trigonometria",
+      "target": "geometria_analitica",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "e0034",
+      "relation": "applied_together_with",
+      "weight": 2,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q492571",
+        "Q489799"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "funcao_trigonometrica",
+      "_tgt": "trigonometria",
+      "source": "trigonometria",
+      "target": "funcao_trigonometrica",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 3,
+      "confidence": "EXTRACTED",
+      "_src": "matematica_financeira",
+      "_tgt": "progressao_geometrica",
+      "confidence_score": 1.0,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q599160"
+      ],
+      "id": "e0074",
+      "source": "matematica_financeira",
+      "target": "progressao_geometrica"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "2.pdf",
+      "source_location": "Q807418",
+      "weight": 2,
+      "_src": "sistema_de_equacoes",
+      "_tgt": "matematica_financeira",
+      "source": "matematica_financeira",
+      "target": "sistema_de_equacoes"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "2.pdf",
+      "source_location": "Q823996",
+      "weight": 1,
+      "_src": "inequacao",
+      "_tgt": "matematica_financeira",
+      "source": "matematica_financeira",
+      "target": "inequacao"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 2,
+      "confidence": "EXTRACTED",
+      "questions": [
+        "Q788479",
+        "Q746082"
+      ],
+      "_src": "logaritmo",
+      "_tgt": "matematica_financeira",
+      "source": "matematica_financeira",
+      "target": "logaritmo",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "e0029",
+      "relation": "applied_together_with",
+      "weight": 2,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q467758"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "matematica_financeira",
+      "_tgt": "funcao_exponencial",
+      "source": "matematica_financeira",
+      "target": "funcao_exponencial",
+      "confidence_score": 1.0
+    },
+    {
+      "weight": 1,
+      "relation": "applied_together_with",
+      "_src": "funcao_quadratica",
+      "_tgt": "matematica_financeira",
+      "source": "matematica_financeira",
+      "target": "funcao_quadratica",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "_src": "potenciacao_e_radicacao",
+      "_tgt": "progressao_geometrica",
+      "source": "potenciacao_e_radicacao",
+      "target": "progressao_geometrica",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "e0031",
+      "relation": "applied_together_with",
+      "weight": 1,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q407793"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "funcao_quadratica",
+      "_tgt": "inequacao",
+      "source": "funcao_quadratica",
+      "target": "inequacao",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "6.pdf",
+      "source_location": "Q1037",
+      "weight": 1.0,
+      "_src": "funcao_quadratica",
+      "_tgt": "geometria_analitica",
+      "source": "funcao_quadratica",
+      "target": "geometria_analitica"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "questions": [
+        "Q746269"
+      ],
+      "_src": "logaritmo",
+      "_tgt": "progressao_geometrica",
+      "source": "progressao_geometrica",
+      "target": "logaritmo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 3,
+      "confidence": "EXTRACTED",
+      "questions": [
+        "Q746551"
+      ],
+      "_src": "progressao_geometrica",
+      "_tgt": "sequencias_e_series",
+      "source": "progressao_geometrica",
+      "target": "sequencias_e_series",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "4.pdf",
+      "source_location": "Q764",
+      "weight": 1,
+      "_src": "potenciacao",
+      "_tgt": "progressao_geometrica",
+      "source": "progressao_geometrica",
+      "target": "potenciacao"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "6.pdf",
+      "source_location": "Q1073",
+      "weight": 4,
+      "_src": "progressao_geometrica",
+      "_tgt": "funcao_exponencial",
+      "id": "e0030",
+      "source": "progressao_geometrica",
+      "target": "funcao_exponencial"
+    },
+    {
+      "weight": 2,
+      "relation": "applied_together_with",
+      "_src": "semelhanca_de_figuras",
+      "_tgt": "progressao_geometrica",
+      "source": "progressao_geometrica",
+      "target": "semelhanca_de_figuras",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 1.0,
+      "confidence": "EXTRACTED",
+      "_src": "funcao_exponencial",
+      "_tgt": "logaritmo",
+      "questions": [
+        "Q788473"
+      ],
+      "id": "e0028",
+      "source_file": "6.pdf",
+      "source_location": "Q1098",
+      "confidence_score": 1.0,
+      "source": "funcao_exponencial",
+      "target": "logaritmo"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "7.pdf",
+      "source_location": null,
+      "weight": 1,
+      "_src": "funcao_exponencial",
+      "_tgt": "sequencias_e_series",
+      "source": "funcao_exponencial",
+      "target": "sequencias_e_series"
+    },
+    {
+      "weight": 2,
+      "relation": "applied_together_with",
+      "_src": "funcao_logaritmica",
+      "_tgt": "funcao_exponencial",
+      "source": "funcao_exponencial",
+      "target": "funcao_logaritmica",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "co-occurs_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "4.pdf",
+      "source_location": "Q794",
+      "weight": 1,
+      "_src": "progressao_aritmetica",
+      "_tgt": "aritmetica",
+      "source": "progressao_aritmetica",
+      "target": "aritmetica"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "7.pdf",
+      "source_location": null,
+      "weight": 3,
+      "_src": "progressao_aritmetica",
+      "_tgt": "sequencias_e_series",
+      "source": "progressao_aritmetica",
+      "target": "sequencias_e_series"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "7.pdf",
+      "source_location": null,
+      "weight": 2,
+      "_src": "progressao_aritmetica",
+      "_tgt": "inequacao",
+      "source": "progressao_aritmetica",
+      "target": "inequacao"
+    },
+    {
+      "relation": "co-occurs_with",
+      "weight": 1,
+      "confidence": "EXTRACTED",
+      "questions": [
+        "Q785929"
+      ],
+      "_src": "logaritmo",
+      "_tgt": "inequacao",
+      "confidence_score": 0.9,
+      "source_file": "4.pdf",
+      "source_location": "Q620",
+      "source": "inequacao",
+      "target": "logaritmo"
+    },
+    {
+      "relation": "applied_together_with",
+      "weight": 2,
+      "confidence": "EXTRACTED",
+      "questions": [
+        "Q746229"
+      ],
+      "_src": "geometria_analitica",
+      "_tgt": "inequacao",
+      "id": "e0037",
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q558629",
+        "Q467691"
+      ],
+      "source": "inequacao",
+      "target": "geometria_analitica",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "co-occurs_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "4.pdf",
+      "source_location": "Q633",
+      "weight": 1,
+      "_src": "inequacao",
+      "_tgt": "aritmetica",
+      "source": "inequacao",
+      "target": "aritmetica"
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "9.pdf",
+      "source_location": "Q418462,Q420956",
+      "weight": 2.0,
+      "_src": "inequacao",
+      "_tgt": "raciocinio_logico",
+      "source": "inequacao",
+      "target": "raciocinio_logico"
+    },
+    {
+      "weight": 1,
+      "relation": "applied_together_with",
+      "_src": "sequencias_e_series",
+      "_tgt": "semelhanca_de_figuras",
+      "source": "sequencias_e_series",
+      "target": "semelhanca_de_figuras",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "e0071",
+      "relation": "applied_together_with",
+      "weight": 1,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q555542"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "logaritmo",
+      "_tgt": "potencias",
+      "source": "logaritmo",
+      "target": "potencias",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "2.pdf",
+      "source_location": "Q806092",
+      "weight": 1,
+      "_src": "contagem",
+      "_tgt": "sistemas_de_numeracao",
+      "source": "sistemas_de_numeracao",
+      "target": "contagem"
+    },
+    {
+      "id": "e0079",
+      "relation": "applied_together_with",
+      "weight": 2,
+      "source_file": "5.pdf",
+      "source_location": [
+        "Q599179",
+        "Q467695"
+      ],
+      "confidence": "EXTRACTED",
+      "_src": "potencias",
+      "_tgt": "sistemas_de_numeracao",
+      "source": "sistemas_de_numeracao",
+      "target": "potencias",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "applied_together_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "6.pdf",
+      "source_location": "Q1036",
+      "weight": 1.0,
+      "_src": "numeros_reais",
+      "_tgt": "potenciacao",
+      "source": "potenciacao",
+      "target": "numeros_reais"
+    },
+    {
+      "weight": 2,
+      "relation": "applied_together_with",
+      "_src": "aritmetica",
+      "_tgt": "potenciacao",
+      "source": "potenciacao",
+      "target": "aritmetica",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "reduces",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "behavioral_guidelines",
+      "_tgt": "llm_coding_mistakes",
+      "source": "behavioral_guidelines",
+      "target": "llm_coding_mistakes"
+    },
+    {
+      "relation": "biases_toward",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "behavioral_guidelines",
+      "_tgt": "caution_over_speed",
+      "source": "behavioral_guidelines",
+      "target": "caution_over_speed"
+    },
+    {
+      "relation": "includes_guideline",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "behavioral_guidelines",
+      "_tgt": "think_before_coding",
+      "source": "behavioral_guidelines",
+      "target": "think_before_coding"
+    },
+    {
+      "relation": "includes_guideline",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "behavioral_guidelines",
+      "_tgt": "simplicity_first",
+      "source": "behavioral_guidelines",
+      "target": "simplicity_first"
+    },
+    {
+      "relation": "includes_guideline",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "behavioral_guidelines",
+      "_tgt": "surgical_changes",
+      "source": "behavioral_guidelines",
+      "target": "surgical_changes"
+    },
+    {
+      "relation": "includes_guideline",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "behavioral_guidelines",
+      "_tgt": "goal_driven_execution",
+      "source": "behavioral_guidelines",
+      "target": "goal_driven_execution"
+    },
+    {
+      "relation": "requires",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "think_before_coding",
+      "_tgt": "assumptions",
+      "source": "think_before_coding",
+      "target": "assumptions"
+    },
+    {
+      "relation": "requires",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "think_before_coding",
+      "_tgt": "surface_tradeoffs",
+      "source": "think_before_coding",
+      "target": "surface_tradeoffs"
+    },
+    {
+      "relation": "promotes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 0.9,
+      "_src": "think_before_coding",
+      "_tgt": "clarifying_questions",
+      "source": "think_before_coding",
+      "target": "clarifying_questions"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.8,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 0.8,
+      "_src": "think_before_coding",
+      "_tgt": "surgical_changes",
+      "source": "think_before_coding",
+      "target": "surgical_changes"
+    },
+    {
+      "relation": "enforces",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "simplicity_first",
+      "_tgt": "minimum_code",
+      "source": "simplicity_first",
+      "target": "minimum_code"
+    },
+    {
+      "relation": "enforces",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "simplicity_first",
+      "_tgt": "no_speculative_features",
+      "source": "simplicity_first",
+      "target": "no_speculative_features"
+    },
+    {
+      "relation": "enforces",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "simplicity_first",
+      "_tgt": "no_unnecessary_abstractions",
+      "source": "simplicity_first",
+      "target": "no_unnecessary_abstractions"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.8,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 0.8,
+      "_src": "simplicity_first",
+      "_tgt": "goal_driven_execution",
+      "source": "simplicity_first",
+      "target": "goal_driven_execution"
+    },
+    {
+      "relation": "enforces",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "surgical_changes",
+      "_tgt": "touch_only_what_you_must",
+      "source": "surgical_changes",
+      "target": "touch_only_what_you_must"
+    },
+    {
+      "relation": "enforces",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "surgical_changes",
+      "_tgt": "match_existing_style",
+      "source": "surgical_changes",
+      "target": "match_existing_style"
+    },
+    {
+      "relation": "enforces",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "surgical_changes",
+      "_tgt": "no_refactoring_unbroken",
+      "source": "surgical_changes",
+      "target": "no_refactoring_unbroken"
+    },
+    {
+      "relation": "requires",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "goal_driven_execution",
+      "_tgt": "success_criteria",
+      "source": "goal_driven_execution",
+      "target": "success_criteria"
+    },
+    {
+      "relation": "requires",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "goal_driven_execution",
+      "_tgt": "verifiable_goals",
+      "source": "goal_driven_execution",
+      "target": "verifiable_goals"
+    },
+    {
+      "relation": "promotes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 0.9,
+      "_src": "goal_driven_execution",
+      "_tgt": "test_driven_approach",
+      "source": "goal_driven_execution",
+      "target": "test_driven_approach"
+    },
+    {
+      "relation": "prevents",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 0.9,
+      "_src": "clarifying_questions",
+      "_tgt": "llm_coding_mistakes",
+      "source": "llm_coding_mistakes",
+      "target": "clarifying_questions"
+    },
+    {
+      "relation": "operationalizes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "verifiable_goals",
+      "_tgt": "success_criteria",
+      "source": "success_criteria",
+      "target": "verifiable_goals"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "he_001",
+      "nodes": [
+        "probabilidade",
+        "analise_combinatoria",
+        "leitura_de_tabelas"
+      ],
+      "weight": 4,
+      "questions": [
+        "Q488075",
+        "Q488039",
+        "Q418128",
+        "Q488049"
+      ],
+      "relation": "applied_together_with"
+    },
+    {
+      "id": "he_002",
+      "nodes": [
+        "funcao_afim",
+        "matematica_financeira",
+        "interpretacao_de_graficos"
+      ],
+      "weight": 4,
+      "questions": [
+        "Q487935",
+        "Q418075",
+        "Q488031",
+        "Q488013"
+      ],
+      "relation": "applied_together_with"
+    },
+    {
+      "id": "he_003",
+      "nodes": [
+        "geometria_espacial",
+        "razao_e_proporcao",
+        "grandezas_e_medidas"
+      ],
+      "weight": 4,
+      "questions": [
+        "Q487939",
+        "Q491601",
+        "Q491600",
+        "Q488019"
+      ],
+      "relation": "applied_together_with"
+    },
+    {
+      "id": "he_004",
+      "nodes": [
+        "geometria_plana",
+        "trigonometria",
+        "grandezas_e_medidas"
+      ],
+      "weight": 3,
+      "questions": [
+        "Q17201",
+        "Q488055",
+        "Q491603"
+      ],
+      "relation": "applied_together_with"
+    },
+    {
+      "id": "he_005",
+      "nodes": [
+        "progressao_geometrica",
+        "funcao_exponencial",
+        "matematica_financeira"
+      ],
+      "weight": 3,
+      "questions": [
+        "Q17512",
+        "Q17189",
+        "Q488065"
+      ],
+      "relation": "applied_together_with"
+    },
+    {
+      "id": "he_006",
+      "nodes": [
+        "probabilidade",
+        "interpretacao_de_graficos",
+        "leitura_de_tabelas"
+      ],
+      "weight": 3,
+      "questions": [
+        "Q418132",
+        "Q418164",
+        "Q491856"
+      ],
+      "relation": "applied_together_with"
+    },
+    {
+      "id": "he_007",
+      "nodes": [
+        "funcao_quadratica",
+        "funcao_afim",
+        "equacao"
+      ],
+      "weight": 3,
+      "questions": [
+        "Q488049",
+        "Q488119",
+        "Q283962"
+      ],
+      "relation": "applied_together_with"
+    },
+    {
+      "id": "he_008",
+      "nodes": [
+        "analise_combinatoria",
+        "potenciacao",
+        "sequencias_e_series"
+      ],
+      "weight": 2,
+      "questions": [
+        "Q491936",
+        "Q283942"
+      ],
+      "relation": "applied_together_with"
+    },
+    {
+      "id": "he_009",
+      "nodes": [
+        "semelhanca_de_figuras",
+        "progressao_geometrica",
+        "sequencias_e_series"
+      ],
+      "weight": 2,
+      "questions": [
+        "Q418101",
+        "Q488001"
+      ],
+      "relation": "applied_together_with"
+    },
+    {
+      "id": "he_010",
+      "nodes": [
+        "razao_e_proporcao",
+        "porcentagem",
+        "matematica_financeira"
+      ],
+      "weight": 2,
+      "questions": [
+        "Q491847",
+        "Q420958"
+      ],
+      "relation": "applied_together_with"
+    }
+  ]
+}

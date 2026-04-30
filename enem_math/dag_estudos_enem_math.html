@@ -1,0 +1,864 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DAG de estudos - Matemática ENEM</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --line: #cbd5e1;
+      --edge: #64748b;
+      --active: #dc2626;
+      --shadow: 0 12px 30px rgba(15, 23, 42, 0.10);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: 330px minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    aside {
+      border-right: 1px solid var(--line);
+      background: var(--panel);
+      padding: 18px;
+      overflow: auto;
+      max-height: 100vh;
+    }
+
+    main {
+      min-width: 0;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+    }
+
+    header {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(8px);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin: 22px 0 10px;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #334155;
+    }
+
+    p {
+      margin: 8px 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    input, select, button {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      border-radius: 6px;
+      font: inherit;
+      font-size: 13px;
+      min-height: 34px;
+    }
+
+    input {
+      width: 100%;
+      padding: 7px 9px;
+      margin-top: 10px;
+    }
+
+    select {
+      padding: 7px 9px;
+      min-width: 190px;
+    }
+
+    button {
+      padding: 7px 10px;
+      cursor: pointer;
+    }
+
+    button:hover { border-color: #94a3b8; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      background: #f8fafc;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 18px;
+    }
+
+    .stat span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 2px;
+    }
+
+    .legend, .node-list, .edge-list {
+      display: grid;
+      gap: 6px;
+    }
+
+    .legend-item, .node-item, .edge-item {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 8px;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .legend-item {
+      display: grid;
+      grid-template-columns: 14px 1fr;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .swatch {
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+      border: 1px solid rgba(15, 23, 42, 0.18);
+    }
+
+    .node-item {
+      cursor: pointer;
+    }
+
+    .node-item:hover {
+      border-color: #94a3b8;
+      background: #f8fafc;
+    }
+
+    .edge-item small, .node-item small {
+      display: block;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .viewport {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: calc(100vh - 64px);
+      cursor: grab;
+    }
+
+    svg.dragging { cursor: grabbing; }
+
+    .cluster rect {
+      fill-opacity: 0.14;
+      stroke-width: 2;
+      rx: 12;
+    }
+
+    .cluster text {
+      font-size: 15px;
+      font-weight: 700;
+      fill: #334155;
+    }
+
+    .edge path {
+      fill: none;
+      stroke: var(--edge);
+      stroke-width: 1.55;
+      marker-end: url(#arrow);
+      opacity: 0.72;
+    }
+
+    .edge text {
+      font-size: 10px;
+      fill: #475569;
+      paint-order: stroke;
+      stroke: #fff;
+      stroke-width: 4px;
+      stroke-linejoin: round;
+    }
+
+    .node rect {
+      stroke: #475569;
+      stroke-width: 1.2;
+      rx: 8;
+      filter: drop-shadow(0 3px 5px rgba(15, 23, 42, 0.12));
+    }
+
+    .node text {
+      font-size: 12px;
+      font-weight: 650;
+      fill: #0f172a;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      pointer-events: none;
+    }
+
+    .node.root rect { stroke-width: 2.4; stroke: #0284c7; }
+    .node.terminal rect { stroke-width: 2.4; stroke: #be123c; }
+    .node.active rect { stroke: var(--active); stroke-width: 3; }
+    .edge.active path { stroke: var(--active); stroke-width: 2.4; opacity: 1; }
+    .edge.dim, .node.dim { opacity: 0.18; }
+
+    .badge-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .badge {
+      border: 1px solid var(--line);
+      color: #334155;
+      border-radius: 999px;
+      padding: 3px 7px;
+      font-size: 11px;
+      background: #f8fafc;
+    }
+
+    .selected {
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      background: #f8fafc;
+      min-height: 92px;
+    }
+
+    .selected strong { display: block; margin-bottom: 6px; }
+
+    @media (max-width: 900px) {
+      .app { grid-template-columns: 1fr; }
+      aside {
+        max-height: none;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+      header {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      .controls { width: 100%; }
+      select, button { flex: 1; }
+      svg { min-height: 70vh; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside>
+      <h1>DAG de estudos - Matemática ENEM</h1>
+      <p>Sequência dirigida de pré-requisitos criada a partir dos objetos oficiais e do grafo graphify das questões.</p>
+      <input id="search" type="search" placeholder="Filtrar conteúdo...">
+      <div class="stats">
+        <div class="stat"><strong id="nodeCount">0</strong><span>nós</span></div>
+        <div class="stat"><strong id="edgeCount">0</strong><span>arestas</span></div>
+        <div class="stat"><strong id="rootCount">0</strong><span>raízes</span></div>
+      </div>
+
+      <div class="selected" id="selected">
+        <strong>Nenhum nó selecionado</strong>
+        <p>Clique em um conteúdo para destacar pré-requisitos e dependentes.</p>
+      </div>
+
+      <h2>Legenda</h2>
+      <div class="legend" id="legend"></div>
+
+      <h2>Conteúdos</h2>
+      <div class="node-list" id="nodeList"></div>
+
+      <h2>Arestas visíveis</h2>
+      <div class="edge-list" id="edgeList"></div>
+    </aside>
+
+    <main>
+      <header>
+        <div>
+          <h1>Visualização interativa</h1>
+          <p>Arraste para navegar, use a roda do mouse para zoom e clique nos nós para destacar relações.</p>
+        </div>
+        <div class="controls">
+          <select id="clusterFilter" aria-label="Filtrar macroárea">
+            <option value="">Todas as macroáreas</option>
+          </select>
+          <button id="fitButton">Ajustar</button>
+          <button id="clearButton">Limpar destaque</button>
+        </div>
+      </header>
+      <div class="viewport">
+        <svg id="graph" role="img" aria-label="DAG de estudos de matemática ENEM">
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"></path>
+            </marker>
+          </defs>
+          <g id="canvas"></g>
+        </svg>
+      </div>
+    </main>
+  </div>
+
+  <script id="dotSource" type="text/plain">
+digraph DAG_ENEM_Math {
+  subgraph cluster_numericos {
+    label="Conhecimentos numericos";
+    color="#93c5fd";
+    aritmetica [label="Aritmetica"];
+    sistemas_de_numeracao [label="Sistemas de numeracao"];
+    numeros_naturais_inteiros [label="Numeros naturais e inteiros"];
+    numeros_racionais_fracoes [label="Numeros racionais e fracoes"];
+    numeros_reais [label="Numeros reais"];
+    mmc_mdc_divisibilidade [label="Divisibilidade, MMC e MDC"];
+    potenciacao_radicacao [label="Potenciacao e radiciacao"];
+    razao_proporcao [label="Razao e proporcao"];
+    porcentagem_juros [label="Porcentagem e juros"];
+    matematica_financeira [label="Matematica financeira"];
+    sequencias_series [label="Sequencias e series"];
+    progressao_aritmetica [label="Progressao aritmetica"];
+    progressao_geometrica [label="Progressao geometrica"];
+    contagem [label="Principios de contagem"];
+  }
+  subgraph cluster_algebra {
+    label="Conhecimentos algebricos";
+    color="#86efac";
+    equacoes [label="Equacoes"];
+    inequacoes [label="Inequacoes"];
+    sistemas_equacoes [label="Sistemas de equacoes"];
+    graficos_funcoes [label="Graficos e funcoes"];
+    funcao_afim [label="Funcao afim"];
+    funcao_quadratica [label="Funcao quadratica"];
+    funcao_exponencial [label="Funcao exponencial"];
+    logaritmos [label="Logaritmos"];
+    funcao_logaritmica [label="Funcao logaritmica"];
+    ciclo_trigonometrico [label="Ciclo trigonometrico"];
+    funcao_trigonometrica [label="Funcao trigonometrica"];
+  }
+  subgraph cluster_geometria {
+    label="Conhecimentos geometricos";
+    color="#fdba74";
+    grandezas_medidas [label="Grandezas, medidas e escalas"];
+    geometria_plana [label="Geometria plana"];
+    angulos_retas [label="Angulos e posicoes de retas"];
+    semelhanca_tales [label="Semelhanca, congruencia e Tales"];
+    relacoes_metricas [label="Relacoes metricas nos triangulos"];
+    circunferencias [label="Circunferencias"];
+    trigonometria_agudo [label="Trigonometria do angulo agudo"];
+    geometria_espacial [label="Geometria espacial"];
+    simetrias [label="Simetrias planas e espaciais"];
+  }
+  subgraph cluster_estatistica {
+    label="Estatistica e probabilidade";
+    color="#c4b5fd";
+    leitura_tabelas [label="Leitura de tabelas"];
+    interpretacao_graficos [label="Interpretacao de graficos"];
+    estatistica [label="Estatistica descritiva"];
+    medidas_tendencia [label="Media, moda e mediana"];
+    dispersao [label="Desvios e variancia"];
+    teoria_conjuntos [label="Teoria dos conjuntos"];
+    probabilidade [label="Probabilidade"];
+    analise_combinatoria [label="Analise combinatoria"];
+  }
+  subgraph cluster_analitica {
+    label="Conhecimentos algebrico-geometricos";
+    color="#f9a8d4";
+    plano_cartesiano [label="Plano cartesiano"];
+    geometria_analitica [label="Geometria analitica"];
+    retas_analitica [label="Retas no plano"];
+    circunferencia_analitica [label="Circunferencia no plano"];
+    paralelismo_perpendicularidade [label="Paralelismo e perpendicularidade"];
+  }
+  aritmetica -> sistemas_de_numeracao [label="base numerica"];
+  aritmetica -> numeros_naturais_inteiros [label="base numerica"];
+  numeros_naturais_inteiros -> numeros_racionais_fracoes [label="extensao dos conjuntos"];
+  numeros_racionais_fracoes -> numeros_reais [label="extensao dos conjuntos"];
+  numeros_naturais_inteiros -> mmc_mdc_divisibilidade [label="graphify: MMC/MDC"];
+  numeros_reais -> potenciacao_radicacao [label="graphify: numeros reais + potenciacao"];
+  mmc_mdc_divisibilidade -> razao_proporcao [label="pre-requisito operacional"];
+  numeros_racionais_fracoes -> razao_proporcao [label="graphify: fracoes + razao"];
+  razao_proporcao -> porcentagem_juros [label="peso 6"];
+  porcentagem_juros -> matematica_financeira [label="peso 5"];
+  razao_proporcao -> matematica_financeira [label="peso 7"];
+  potenciacao_radicacao -> funcao_exponencial [label="pre-requisito"];
+  potenciacao_radicacao -> logaritmos [label="graphify: potencias + logaritmo"];
+  aritmetica -> sequencias_series [label="base numerica"];
+  sequencias_series -> progressao_aritmetica [label="graphify: PA + sequencias"];
+  sequencias_series -> progressao_geometrica [label="peso 3"];
+  potenciacao_radicacao -> progressao_geometrica [label="graphify: potenciacao + PG"];
+  progressao_geometrica -> funcao_exponencial [label="peso 4"];
+  aritmetica -> contagem [label="base numerica"];
+  sistemas_de_numeracao -> contagem [label="graphify: sistemas + contagem"];
+  contagem -> analise_combinatoria [label="PDF: principios de contagem"];
+  potenciacao_radicacao -> analise_combinatoria [label="hyperedge he_008"];
+  aritmetica -> equacoes [label="base algebrica"];
+  equacoes -> inequacoes [label="PDF: equacoes e inequacoes"];
+  equacoes -> sistemas_equacoes [label="peso 2"];
+  razao_proporcao -> sistemas_equacoes [label="peso 2"];
+  equacoes -> graficos_funcoes [label="pre-requisito"];
+  plano_cartesiano -> graficos_funcoes [label="representacao"];
+  graficos_funcoes -> funcao_afim [label="PDF: funcoes 1o grau"];
+  equacoes -> funcao_afim [label="peso 1"];
+  funcao_afim -> funcao_quadratica [label="peso 5"];
+  equacoes -> funcao_quadratica [label="peso 7"];
+  potenciacao_radicacao -> funcao_exponencial [label="base de expoentes"];
+  logaritmos -> funcao_logaritmica [label="PDF: funcao logaritmica"];
+  funcao_exponencial -> funcao_logaritmica [label="peso 2"];
+  ciclo_trigonometrico -> funcao_trigonometrica [label="PDF: ciclo + funcoes trig."];
+  trigonometria_agudo -> ciclo_trigonometrico [label="progressao conceitual"];
+  razao_proporcao -> grandezas_medidas [label="peso 6"];
+  grandezas_medidas -> geometria_plana [label="peso 6"];
+  geometria_plana -> angulos_retas [label="PDF"];
+  angulos_retas -> semelhanca_tales [label="PDF"];
+  razao_proporcao -> semelhanca_tales [label="graphify: semelhanca + razao"];
+  semelhanca_tales -> relacoes_metricas [label="PDF"];
+  relacoes_metricas -> trigonometria_agudo [label="PDF"];
+  geometria_plana -> circunferencias [label="PDF"];
+  geometria_plana -> simetrias [label="PDF"];
+  grandezas_medidas -> geometria_espacial [label="peso 1"];
+  geometria_plana -> geometria_espacial [label="peso 1"];
+  trigonometria_agudo -> geometria_espacial [label="peso 4"];
+  leitura_tabelas -> interpretacao_graficos [label="peso 2"];
+  interpretacao_graficos -> estatistica [label="peso 2"];
+  estatistica -> medidas_tendencia [label="PDF"];
+  medidas_tendencia -> dispersao [label="PDF"];
+  teoria_conjuntos -> probabilidade [label="peso 3"];
+  analise_combinatoria -> probabilidade [label="hyperedge he_001"];
+  leitura_tabelas -> probabilidade [label="peso 9"];
+  interpretacao_graficos -> probabilidade [label="peso 8"];
+  estatistica -> probabilidade [label="graphify"];
+  plano_cartesiano -> geometria_analitica [label="PDF"];
+  geometria_plana -> geometria_analitica [label="peso 2"];
+  geometria_analitica -> retas_analitica [label="PDF"];
+  retas_analitica -> paralelismo_perpendicularidade [label="PDF"];
+  geometria_analitica -> circunferencia_analitica [label="PDF"];
+  sistemas_equacoes -> geometria_analitica [label="PDF"];
+  funcao_afim -> geometria_analitica [label="peso 3"];
+  grandezas_medidas -> interpretacao_graficos [label="peso 4"];
+  funcao_afim -> matematica_financeira [label="peso 6"];
+  progressao_geometrica -> matematica_financeira [label="peso 3"];
+}
+  </script>
+
+  <script>
+    const clusterPalette = {
+      "Conhecimentos numericos": "#93c5fd",
+      "Conhecimentos algebricos": "#86efac",
+      "Conhecimentos geometricos": "#fdba74",
+      "Estatistica e probabilidade": "#c4b5fd",
+      "Conhecimentos algebrico-geometricos": "#f9a8d4"
+    };
+
+    const dot = document.getElementById("dotSource").textContent;
+    const nodes = new Map();
+    const edges = [];
+    const clusters = [];
+    let currentCluster = null;
+
+    dot.split("\n").forEach((rawLine) => {
+      const line = rawLine.trim();
+      const clusterMatch = line.match(/^subgraph\s+(cluster_[a-z_]+)\s+\{/);
+      if (clusterMatch) {
+        currentCluster = { id: clusterMatch[1], label: clusterMatch[1], color: "#e2e8f0", nodeIds: [] };
+        clusters.push(currentCluster);
+        return;
+      }
+      if (currentCluster && line === "}") {
+        currentCluster = null;
+        return;
+      }
+      const clusterLabel = line.match(/^label="([^"]+)";/);
+      if (currentCluster && clusterLabel) {
+        currentCluster.label = clusterLabel[1];
+        return;
+      }
+      const clusterColor = line.match(/^color="([^"]+)";/);
+      if (currentCluster && clusterColor) {
+        currentCluster.color = clusterColor[1];
+        return;
+      }
+      const nodeMatch = line.match(/^([a-zA-Z0-9_]+)\s+\[label="([^"]+)"\];/);
+      if (currentCluster && nodeMatch) {
+        nodes.set(nodeMatch[1], {
+          id: nodeMatch[1],
+          label: nodeMatch[2],
+          cluster: currentCluster.label,
+          color: currentCluster.color
+        });
+        currentCluster.nodeIds.push(nodeMatch[1]);
+        return;
+      }
+      const edgeMatch = line.match(/^([a-zA-Z0-9_]+)\s+->\s+([a-zA-Z0-9_]+)\s+\[label="([^"]+)"\];/);
+      if (edgeMatch) {
+        edges.push({ source: edgeMatch[1], target: edgeMatch[2], label: edgeMatch[3] });
+      }
+    });
+
+    const nodeArray = [...nodes.values()];
+    const indegree = new Map(nodeArray.map((n) => [n.id, 0]));
+    const outdegree = new Map(nodeArray.map((n) => [n.id, 0]));
+    const children = new Map(nodeArray.map((n) => [n.id, []]));
+    const parents = new Map(nodeArray.map((n) => [n.id, []]));
+    edges.forEach((e) => {
+      indegree.set(e.target, (indegree.get(e.target) || 0) + 1);
+      outdegree.set(e.source, (outdegree.get(e.source) || 0) + 1);
+      children.get(e.source).push(e.target);
+      parents.get(e.target).push(e.source);
+    });
+
+    const roots = nodeArray.filter((n) => indegree.get(n.id) === 0).map((n) => n.id);
+    const terminals = nodeArray.filter((n) => outdegree.get(n.id) === 0).map((n) => n.id);
+
+    const layer = new Map(nodeArray.map((n) => [n.id, 0]));
+    const queue = [...roots];
+    while (queue.length) {
+      const id = queue.shift();
+      children.get(id).forEach((child) => {
+        const nextLayer = Math.max(layer.get(child), layer.get(id) + 1);
+        if (nextLayer !== layer.get(child)) {
+          layer.set(child, nextLayer);
+          queue.push(child);
+        }
+      });
+    }
+
+    const clusterOrder = clusters.map((c) => c.label);
+    const layerGroups = new Map();
+    nodeArray.forEach((node) => {
+      const key = layer.get(node.id);
+      if (!layerGroups.has(key)) layerGroups.set(key, []);
+      layerGroups.get(key).push(node);
+    });
+
+    const nodeW = 190;
+    const nodeH = 48;
+    const xGap = 245;
+    const yGap = 86;
+    const topPad = 110;
+    const leftPad = 90;
+
+    [...layerGroups.keys()].sort((a, b) => a - b).forEach((l) => {
+      const group = layerGroups.get(l).sort((a, b) => {
+        const c = clusterOrder.indexOf(a.cluster) - clusterOrder.indexOf(b.cluster);
+        return c || a.label.localeCompare(b.label);
+      });
+      group.forEach((node, i) => {
+        node.x = leftPad + l * xGap;
+        node.y = topPad + i * yGap;
+      });
+    });
+
+    const graphWidth = leftPad * 2 + (Math.max(...layer.values()) + 1) * xGap;
+    const graphHeight = Math.max(760, topPad * 2 + Math.max(...nodeArray.map((n) => n.y)));
+
+    const svg = document.getElementById("graph");
+    const canvas = document.getElementById("canvas");
+    let scale = 0.82;
+    let panX = 36;
+    let panY = 24;
+    let selectedId = null;
+    let clusterFilter = "";
+    let query = "";
+
+    function esc(value) {
+      return String(value).replace(/[&<>"']/g, (ch) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      }[ch]));
+    }
+
+    function wrapLabel(label, limit = 23) {
+      const words = label.split(" ");
+      const lines = [];
+      let line = "";
+      words.forEach((word) => {
+        const candidate = line ? `${line} ${word}` : word;
+        if (candidate.length > limit && line) {
+          lines.push(line);
+          line = word;
+        } else {
+          line = candidate;
+        }
+      });
+      if (line) lines.push(line);
+      return lines.slice(0, 3);
+    }
+
+    function isVisibleNode(node) {
+      const matchesCluster = !clusterFilter || node.cluster === clusterFilter;
+      const matchesQuery = !query || node.label.toLowerCase().includes(query);
+      return matchesCluster && matchesQuery;
+    }
+
+    function activeSet() {
+      if (!selectedId) return new Set();
+      return new Set([selectedId, ...parents.get(selectedId), ...children.get(selectedId)]);
+    }
+
+    function updateTransform() {
+      canvas.setAttribute("transform", `translate(${panX},${panY}) scale(${scale})`);
+    }
+
+    function edgePath(source, target) {
+      const sx = source.x + nodeW / 2;
+      const sy = source.y;
+      const tx = target.x - nodeW / 2;
+      const ty = target.y;
+      const mid = sx + Math.max(40, (tx - sx) / 2);
+      return `M${sx},${sy} C${mid},${sy} ${mid},${ty} ${tx},${ty}`;
+    }
+
+    function render() {
+      const visibleNodes = nodeArray.filter(isVisibleNode);
+      const visibleIds = new Set(visibleNodes.map((n) => n.id));
+      const visibleEdges = edges.filter((e) => visibleIds.has(e.source) && visibleIds.has(e.target));
+      const active = activeSet();
+
+      const clusterBoxes = clusters.map((cluster) => {
+        const ns = cluster.nodeIds.map((id) => nodes.get(id)).filter((n) => visibleIds.has(n.id));
+        if (!ns.length) return "";
+        const minX = Math.min(...ns.map((n) => n.x - nodeW / 2)) - 28;
+        const maxX = Math.max(...ns.map((n) => n.x + nodeW / 2)) + 28;
+        const minY = Math.min(...ns.map((n) => n.y - nodeH / 2)) - 54;
+        const maxY = Math.max(...ns.map((n) => n.y + nodeH / 2)) + 28;
+        return `
+          <g class="cluster">
+            <rect x="${minX}" y="${minY}" width="${maxX - minX}" height="${maxY - minY}" fill="${cluster.color}" stroke="${cluster.color}"></rect>
+            <text x="${minX + 14}" y="${minY + 28}">${esc(cluster.label)}</text>
+          </g>`;
+      }).join("");
+
+      const edgeMarkup = visibleEdges.map((edge, i) => {
+        const source = nodes.get(edge.source);
+        const target = nodes.get(edge.target);
+        const path = edgePath(source, target);
+        const isActive = selectedId && (edge.source === selectedId || edge.target === selectedId);
+        const isDim = selectedId && !isActive;
+        const labelX = (source.x + target.x) / 2;
+        const labelY = (source.y + target.y) / 2 - 6 + ((i % 3) - 1) * 8;
+        return `
+          <g class="edge ${isActive ? "active" : ""} ${isDim ? "dim" : ""}" data-source="${edge.source}" data-target="${edge.target}">
+            <path d="${path}"></path>
+            <text x="${labelX}" y="${labelY}">${esc(edge.label)}</text>
+          </g>`;
+      }).join("");
+
+      const nodeMarkup = visibleNodes.map((node) => {
+        const lines = wrapLabel(node.label);
+        const isActive = active.has(node.id);
+        const isDim = selectedId && !isActive;
+        const classes = [
+          "node",
+          roots.includes(node.id) ? "root" : "",
+          terminals.includes(node.id) ? "terminal" : "",
+          node.id === selectedId ? "active" : "",
+          isDim ? "dim" : ""
+        ].join(" ");
+        const lineHeight = 14;
+        const firstY = node.y - ((lines.length - 1) * lineHeight) / 2;
+        return `
+          <g class="${classes}" data-id="${node.id}" tabindex="0" role="button" aria-label="${esc(node.label)}">
+            <rect x="${node.x - nodeW / 2}" y="${node.y - nodeH / 2}" width="${nodeW}" height="${nodeH}" fill="${node.color}"></rect>
+            ${lines.map((line, i) => `<text x="${node.x}" y="${firstY + i * lineHeight}">${esc(line)}</text>`).join("")}
+          </g>`;
+      }).join("");
+
+      canvas.innerHTML = clusterBoxes + edgeMarkup + nodeMarkup;
+      updateTransform();
+
+      canvas.querySelectorAll(".node").forEach((el) => {
+        el.addEventListener("click", () => selectNode(el.dataset.id));
+      });
+
+      renderLists(visibleNodes, visibleEdges);
+      renderSelected();
+    }
+
+    function renderLists(visibleNodes, visibleEdges) {
+      document.getElementById("nodeCount").textContent = String(nodeArray.length);
+      document.getElementById("edgeCount").textContent = String(edges.length);
+      document.getElementById("rootCount").textContent = String(roots.length);
+
+      document.getElementById("nodeList").innerHTML = visibleNodes
+        .sort((a, b) => layer.get(a.id) - layer.get(b.id) || a.label.localeCompare(b.label))
+        .map((node) => `
+          <div class="node-item" data-id="${node.id}">
+            ${esc(node.label)}
+            <small>${esc(node.cluster)} · nível ${layer.get(node.id)} · ${indegree.get(node.id)} pais · ${outdegree.get(node.id)} filhos</small>
+          </div>`)
+        .join("");
+
+      document.querySelectorAll(".node-item").forEach((el) => {
+        el.addEventListener("click", () => selectNode(el.dataset.id));
+      });
+
+      document.getElementById("edgeList").innerHTML = visibleEdges.slice(0, 80)
+        .map((edge) => `
+          <div class="edge-item">
+            ${esc(nodes.get(edge.source).label)} -> ${esc(nodes.get(edge.target).label)}
+            <small>${esc(edge.label)}</small>
+          </div>`)
+        .join("");
+    }
+
+    function renderSelected() {
+      const panel = document.getElementById("selected");
+      if (!selectedId) {
+        panel.innerHTML = `<strong>Nenhum nó selecionado</strong><p>Clique em um conteúdo para destacar pré-requisitos e dependentes.</p>`;
+        return;
+      }
+      const node = nodes.get(selectedId);
+      const parentLabels = parents.get(selectedId).map((id) => nodes.get(id).label);
+      const childLabels = children.get(selectedId).map((id) => nodes.get(id).label);
+      panel.innerHTML = `
+        <strong>${esc(node.label)}</strong>
+        <p>${esc(node.cluster)} · nível ${layer.get(node.id)}</p>
+        <div class="badge-row">
+          ${roots.includes(node.id) ? `<span class="badge">raiz</span>` : ""}
+          ${terminals.includes(node.id) ? `<span class="badge">terminal</span>` : ""}
+          <span class="badge">${parentLabels.length} pais</span>
+          <span class="badge">${childLabels.length} filhos</span>
+        </div>
+        <p><b>Pré-requisitos:</b> ${parentLabels.length ? esc(parentLabels.join(", ")) : "nenhum"}</p>
+        <p><b>Próximos:</b> ${childLabels.length ? esc(childLabels.join(", ")) : "nenhum"}</p>`;
+    }
+
+    function renderLegend() {
+      const legend = document.getElementById("legend");
+      legend.innerHTML = clusters.map((cluster) => `
+        <div class="legend-item">
+          <span class="swatch" style="background:${cluster.color}"></span>
+          <span>${esc(cluster.label)}</span>
+        </div>`).join("") + `
+        <div class="legend-item"><span class="swatch" style="background:#fff;border:2px solid #0284c7"></span><span>Nó raiz</span></div>
+        <div class="legend-item"><span class="swatch" style="background:#fff;border:2px solid #be123c"></span><span>Nó terminal</span></div>`;
+
+      const select = document.getElementById("clusterFilter");
+      clusters.forEach((cluster) => {
+        const option = document.createElement("option");
+        option.value = cluster.label;
+        option.textContent = cluster.label;
+        select.appendChild(option);
+      });
+    }
+
+    function selectNode(id) {
+      selectedId = selectedId === id ? null : id;
+      render();
+    }
+
+    function fit() {
+      const boundsW = graphWidth;
+      const boundsH = graphHeight;
+      const rect = svg.getBoundingClientRect();
+      scale = Math.min((rect.width - 80) / boundsW, (rect.height - 80) / boundsH, 1.05);
+      panX = 40;
+      panY = 40;
+      updateTransform();
+    }
+
+    svg.addEventListener("wheel", (event) => {
+      event.preventDefault();
+      const delta = event.deltaY > 0 ? 0.9 : 1.1;
+      scale = Math.max(0.22, Math.min(2.3, scale * delta));
+      updateTransform();
+    }, { passive: false });
+
+    let dragging = false;
+    let last = null;
+    svg.addEventListener("pointerdown", (event) => {
+      dragging = true;
+      last = { x: event.clientX, y: event.clientY };
+      svg.classList.add("dragging");
+      svg.setPointerCapture(event.pointerId);
+    });
+    svg.addEventListener("pointermove", (event) => {
+      if (!dragging) return;
+      panX += event.clientX - last.x;
+      panY += event.clientY - last.y;
+      last = { x: event.clientX, y: event.clientY };
+      updateTransform();
+    });
+    svg.addEventListener("pointerup", () => {
+      dragging = false;
+      svg.classList.remove("dragging");
+    });
+
+    document.getElementById("search").addEventListener("input", (event) => {
+      query = event.target.value.trim().toLowerCase();
+      render();
+    });
+    document.getElementById("clusterFilter").addEventListener("change", (event) => {
+      clusterFilter = event.target.value;
+      selectedId = null;
+      render();
+    });
+    document.getElementById("fitButton").addEventListener("click", fit);
+    document.getElementById("clearButton").addEventListener("click", () => {
+      selectedId = null;
+      query = "";
+      clusterFilter = "";
+      document.getElementById("search").value = "";
+      document.getElementById("clusterFilter").value = "";
+      render();
+      fit();
+    });
+
+    renderLegend();
+    render();
+    requestAnimationFrame(fit);
+  </script>
+</body>
+</html>

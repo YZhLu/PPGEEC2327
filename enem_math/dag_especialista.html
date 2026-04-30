@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DAG especialista - Matemática ENEM</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --panel: #fff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --line: #cbd5e1;
+      --edge: #64748b;
+      --active: #dc2626;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: 340px minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    aside {
+      max-height: 100vh;
+      overflow: auto;
+      padding: 18px;
+      background: var(--panel);
+      border-right: 1px solid var(--line);
+    }
+
+    main {
+      min-width: 0;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+    }
+
+    header {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(8px);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin: 22px 0 10px;
+      color: #334155;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 8px 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    input, select, button {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--text);
+      font: inherit;
+      font-size: 13px;
+    }
+
+    input {
+      width: 100%;
+      margin-top: 10px;
+      padding: 7px 9px;
+    }
+
+    select, button { padding: 7px 10px; }
+    button { cursor: pointer; }
+    button:hover { border-color: #94a3b8; }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .stat {
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f8fafc;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 18px;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .selected {
+      min-height: 96px;
+      margin-top: 14px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f8fafc;
+    }
+
+    .selected strong { display: block; margin-bottom: 6px; }
+
+    .badge-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .badge {
+      padding: 3px 7px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: #334155;
+      font-size: 11px;
+    }
+
+    .legend, .node-list, .edge-list {
+      display: grid;
+      gap: 6px;
+    }
+
+    .legend-item, .node-item, .edge-item {
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .legend-item {
+      display: grid;
+      grid-template-columns: 14px 1fr;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .swatch {
+      width: 14px;
+      height: 14px;
+      border: 1px solid rgba(15, 23, 42, 0.18);
+      border-radius: 4px;
+    }
+
+    .node-item { cursor: pointer; }
+    .node-item:hover { border-color: #94a3b8; background: #f8fafc; }
+
+    .node-item small, .edge-item small {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+    }
+
+    .viewport {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: calc(100vh - 64px);
+      cursor: grab;
+    }
+
+    svg.dragging { cursor: grabbing; }
+
+    .cluster rect {
+      fill-opacity: 0.14;
+      stroke-width: 2;
+      rx: 12;
+    }
+
+    .cluster text {
+      fill: #334155;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .edge path {
+      fill: none;
+      stroke: var(--edge);
+      stroke-width: 1.55;
+      marker-end: url(#arrow);
+      opacity: 0.72;
+    }
+
+    .edge text {
+      fill: #475569;
+      font-size: 10px;
+      paint-order: stroke;
+      stroke: #fff;
+      stroke-linejoin: round;
+      stroke-width: 4px;
+    }
+
+    .node rect {
+      stroke: #475569;
+      stroke-width: 1.2;
+      rx: 8;
+      filter: drop-shadow(0 3px 5px rgba(15, 23, 42, 0.12));
+    }
+
+    .node text {
+      fill: #0f172a;
+      font-size: 12px;
+      font-weight: 650;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      pointer-events: none;
+    }
+
+    .node.root rect { stroke: #0284c7; stroke-width: 2.4; }
+    .node.terminal rect { stroke: #be123c; stroke-width: 2.4; }
+    .node.active rect { stroke: var(--active); stroke-width: 3; }
+    .edge.active path { stroke: var(--active); stroke-width: 2.4; opacity: 1; }
+    .edge.dim, .node.dim, .cluster.dim { opacity: 0.18; }
+
+    @media (max-width: 900px) {
+      .app { grid-template-columns: 1fr; }
+      aside {
+        max-height: none;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+      header {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      .controls { width: 100%; }
+      select, button { flex: 1; }
+      svg { min-height: 70vh; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside>
+      <h1>DAG especialista - Matemática ENEM</h1>
+      <p>Visualização horizontal do DAG salvo em <code>data-1777146398773.csv</code>, preservando as dependências do especialista.</p>
+      <input id="search" type="search" placeholder="Filtrar conteúdo...">
+
+      <div class="stats">
+        <div class="stat"><strong id="nodeCount">0</strong><span>nós</span></div>
+        <div class="stat"><strong id="edgeCount">0</strong><span>arestas</span></div>
+        <div class="stat"><strong id="rootCount">0</strong><span>raízes</span></div>
+      </div>
+
+      <div class="selected" id="selected">
+        <strong>Nenhum nó selecionado</strong>
+        <p>Clique em um conteúdo para destacar pré-requisitos e dependentes.</p>
+      </div>
+
+      <h2>Legenda</h2>
+      <div class="legend" id="legend"></div>
+
+      <h2>Conteúdos</h2>
+      <div class="node-list" id="nodeList"></div>
+
+      <h2>Arestas visíveis</h2>
+      <div class="edge-list" id="edgeList"></div>
+    </aside>
+
+    <main>
+      <header>
+        <div>
+          <h1>Visualização interativa</h1>
+          <p>Arraste para navegar, use a roda do mouse para zoom e clique nos nós para destacar relações.</p>
+        </div>
+        <div class="controls">
+          <select id="areaFilter" aria-label="Filtrar macroárea">
+            <option value="">Todas as macroáreas</option>
+          </select>
+          <button id="fitButton">Ajustar</button>
+          <button id="clearButton">Limpar destaque</button>
+        </div>
+      </header>
+
+      <div class="viewport">
+        <svg id="graph" role="img" aria-label="DAG especialista de matemática ENEM">
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"></path>
+            </marker>
+          </defs>
+          <g id="canvas"></g>
+        </svg>
+      </div>
+    </main>
+  </div>
+
+  <script id="skilltreeData" type="application/json">{"name":"ENEM 0 - Math.obj","nodes":[{"id":"971b5857-96ab-4e57-8f03-e22d8c9e062f","label":"Conjuntos","description":"Operações em conjuntos numéricos (Naturais, Inteiros, Racionais e Reais)","x":933.903,"y":0},{"id":"3e5693f6-cf53-4462-915b-a567afb72168","label":"Desigualdades","description":"Ordenamento, módulo e intervalos","x":1018,"y":98.253},{"id":"b8e9c95c-26ca-45bb-bff0-f93315c5938e","label":"Divisibilidade","description":"D = d*q + r","x":1063.46,"y":228.33},{"id":"2f49a1be-2367-4f7b-b802-3b2e472d630b","label":"Relações de Dep.","description":"Relações de dependência entre grandezas","x":1355.368,"y":553.675},{"id":"be6ae7cb-598b-48f7-87c1-1f2c29399a84","label":"Contagem","description":"Princípios de contagem","x":877.073,"y":335.934},{"id":"008e06a9-2716-43a7-b2cd-a1ae11d23052","label":"Seq & Prog","description":"Sequencias e Progressões","x":1090.711,"y":639.949},{"id":"f00077d4-90f9-416f-b3c5-ada742a3d44b","label":"Raz & Prop","description":"Razões e Proporções","x":1149.794,"y":339.173},{"id":"c4f350de-cd89-49b7-97bf-14cee7858b06","label":"Fig Plana","description":"Características das figuras geométricas planas","x":384.456,"y":709.981},{"id":"4c609d53-1a0a-4d55-8960-13d243c2c981","label":"Fig Espacial","description":"Características das figuras geométricas espaciais.","x":22.139,"y":1059.073},{"id":"9ef6efd1-c4c5-4ab9-b541-fe113b5982d0","label":"Simetria Plana","description":"Simetrias de figuras Planas","x":-140.693,"y":1062.06},{"id":"053b0b8b-b1d4-41a3-b2c6-3d2582beb977","label":"Simetria Espacial","description":"Simetrias de figuras Espaciais","x":-56.171,"y":1203.396},{"id":"94928df4-9e47-4f2e-85fa-91b3c0009f03","label":"CST","description":"Congruência e Semelhança de Triângulos","x":513.097,"y":1309.75},{"id":"c22b4883-8b01-4988-a6fb-cb1fedff65d7","label":"Teorema de Tales","description":"Teorema de Tales","x":452.667,"y":1198.704},{"id":"aed64799-c676-446a-8641-9c3e123d2e62","label":"RMT","description":"Relações métricas nos triângulos","x":587.514,"y":1411.692},{"id":"c7556c12-5230-45ca-a08f-87bdbe3a1e1c","label":"TAA","description":"Trigonometria do Ângulo Agudo","x":527.506,"y":1543.089},{"id":"e281e5de-d6af-4fe4-9a15-108d9dcb0b49","label":"GUME-C","description":"Grandezas, Unidades de Medidas e Escalas - Comprimentos","x":341.107,"y":1054.74},{"id":"db2f5c0c-b350-4529-b13e-edfd09390fb3","label":"GUME-A","description":"Grandezas, Unidades de Medidas e Escalas - Áreas","x":260.996,"y":1205.078},{"id":"9a28459c-7dd2-427c-a534-55777c8017b5","label":"GUME-V","description":"Grandezas, Unidades de Medidas e Escalas - Volumes","x":184.518,"y":1322.968},{"id":"8a4d9e20-61db-42f3-be3d-4671d338a958","label":"RAD","description":"Representação e Análise de Dados","x":1271,"y":97},{"id":"d0c08122-e9fb-487e-905c-d762c9051c5d","label":"MTC","description":"Medidas de Tendência Central (médias, moda e mediana)","x":1323,"y":247},{"id":"558e31d6-9af3-4f79-95ed-de3c3f5ed789","label":"Desvios e Variância","description":"Desvios e Variância","x":1350,"y":361},{"id":"5455984d-507a-4a68-9044-a2b71104a1f2","label":"Probabilidade","description":"Noções de Probabilidade","x":1355.574,"y":641.581},{"id":"a57d5fe1-c177-4df0-80a4-f22c4ae3a11a","label":"Gráficos e Funções","description":"Gráficos e Funções","x":825.091,"y":502.091},{"id":"590b61a9-d109-4ad7-a8c8-18ba133240eb","label":"Funções do 1º grau","description":"Funções Algébricas do 1º grau","x":827.287,"y":616.335},{"id":"c827625f-eb83-4c4d-bf0d-12d9923765aa","label":"Funções do 2º grau","description":"Funções Algébricas do 2º grau","x":984.093,"y":732.563},{"id":"6e2bfc21-1367-4675-b2e0-715f82e947f3","label":"RCT","description":"Relações no Ciclo Trigonométrico","x":736.624,"y":1537.889},{"id":"2d2da52b-6d56-4145-a17f-73dd1f168998","label":"Funções Polinomiais","description":"Funções definidas por expressões polinomiais","x":983.695,"y":808.621},{"id":"3a838226-3a83-4484-9627-5bc114e7cc35","label":"Funções Trigonométricas","description":"Funções derivadas do triângulo retângulo","x":735.106,"y":1620.187},{"id":"c135b4d9-c76e-41cc-8705-a35ed6ee715b","label":"Juros","description":"Cálculo de Juros","x":1198.327,"y":1068.882},{"id":"44ce6656-0f1d-4544-a4c1-b9646be61552","label":"Ângulos","description":"Medidas de abertura","x":709.348,"y":953.277},{"id":"6f62e8b2-6b23-47b2-bac2-236198be6098","label":"Porcentagem","description":"Cálculo de Porcentagem","x":1192.818,"y":553.904},{"id":"578d804a-fa8d-4d40-b0e9-03a8847cd7f8","label":"Inequações","description":"Cálculo com desigualdades","x":1071.23,"y":1284.571},{"id":"d2e6802c-84d2-416f-8202-a14a4baa4c35","label":"Sistemas de Equações","description":"Resolução de problemas através de sistemas de equações","x":893.306,"y":1284.472},{"id":"e8cdcb15-6066-40de-bf5c-ee49ff0b8a89","label":"Para & Perp","description":"Paralelismo e Perpendicularidade","x":756.849,"y":139.198},{"id":"7f2c95bf-85fa-4ede-876f-a5b230b5f60a","label":"Fatoração","description":"Fatoração com números primos","x":985.238,"y":503.858},{"id":"93dc5313-fa30-4765-b317-fbfc8cec893b","label":"Funções Racionais","description":"f(x) = Q(x)/P(x)","x":983.319,"y":881.683},{"id":"d984ebb9-bfee-4a43-a594-5411792ff628","label":"Comprimentos","description":"Medidas Lineares","x":562.037,"y":712.612},{"id":"4e731edb-5170-4747-a779-f06c3e706888","label":"Volumes","description":"Medidas Espaciais","x":100.78,"y":1202.851},{"id":"2d7bfa94-74de-4e72-a4b0-de4a7c0fbe40","label":"Áreas","description":"Medidas de Superfícies","x":181.689,"y":1055.985},{"id":"df87bdc9-37b4-44e3-9626-7a2184251cf8","label":"Equações","description":"Cálculo com igualdades","x":985.624,"y":1159.791},{"id":"88034264-3b15-4d1a-897a-908e5111e6e9","label":"Plano Cartesiano","description":"Resolução de problemas envolvendo Plano Cartesiano","x":721.957,"y":336.197},{"id":"89fc1fc8-fbec-4a95-9a5e-e98b60ef1ef9","label":"Circunferências","description":"Resolução de problemas envolvendo circunferências","x":668.358,"y":1175.016},{"id":"85de7e7a-4dc9-4b68-87d7-5a306945e8db","label":"Funções Logarítmicas","description":"f(x) = logbx","x":985.148,"y":1064.232},{"id":"7889ed92-0802-47cd-95c0-0d14fa6fbc12","label":"Funções Exponenciais","description":"f(x) = a^x","x":984.403,"y":951.009},{"id":"53f71bad-fd05-4baa-9f70-665188620aca","label":"Retas","description":"Equação, distâncias, coeficiente angular","x":649.031,"y":504.184}],"edges":[{"source":"db2f5c0c-b350-4529-b13e-edfd09390fb3","target":"9a28459c-7dd2-427c-a534-55777c8017b5"},{"source":"44ce6656-0f1d-4544-a4c1-b9646be61552","target":"89fc1fc8-fbec-4a95-9a5e-e98b60ef1ef9"},{"source":"53f71bad-fd05-4baa-9f70-665188620aca","target":"c4f350de-cd89-49b7-97bf-14cee7858b06"},{"source":"53f71bad-fd05-4baa-9f70-665188620aca","target":"44ce6656-0f1d-4544-a4c1-b9646be61552"},{"source":"89fc1fc8-fbec-4a95-9a5e-e98b60ef1ef9","target":"6e2bfc21-1367-4675-b2e0-715f82e947f3"},{"source":"7889ed92-0802-47cd-95c0-0d14fa6fbc12","target":"85de7e7a-4dc9-4b68-87d7-5a306945e8db"},{"source":"85de7e7a-4dc9-4b68-87d7-5a306945e8db","target":"df87bdc9-37b4-44e3-9626-7a2184251cf8"},{"source":"df87bdc9-37b4-44e3-9626-7a2184251cf8","target":"578d804a-fa8d-4d40-b0e9-03a8847cd7f8"},{"source":"578d804a-fa8d-4d40-b0e9-03a8847cd7f8","target":"6e2bfc21-1367-4675-b2e0-715f82e947f3"},{"source":"6e2bfc21-1367-4675-b2e0-715f82e947f3","target":"3a838226-3a83-4484-9627-5bc114e7cc35"},{"source":"971b5857-96ab-4e57-8f03-e22d8c9e062f","target":"88034264-3b15-4d1a-897a-908e5111e6e9"},{"source":"88034264-3b15-4d1a-897a-908e5111e6e9","target":"a57d5fe1-c177-4df0-80a4-f22c4ae3a11a"},{"source":"f00077d4-90f9-416f-b3c5-ada742a3d44b","target":"53f71bad-fd05-4baa-9f70-665188620aca"},{"source":"df87bdc9-37b4-44e3-9626-7a2184251cf8","target":"d2e6802c-84d2-416f-8202-a14a4baa4c35"},{"source":"7f2c95bf-85fa-4ede-876f-a5b230b5f60a","target":"c827625f-eb83-4c4d-bf0d-12d9923765aa"},{"source":"53f71bad-fd05-4baa-9f70-665188620aca","target":"590b61a9-d109-4ad7-a8c8-18ba133240eb"},{"source":"6f62e8b2-6b23-47b2-bac2-236198be6098","target":"c135b4d9-c76e-41cc-8705-a35ed6ee715b"},{"source":"b8e9c95c-26ca-45bb-bff0-f93315c5938e","target":"7f2c95bf-85fa-4ede-876f-a5b230b5f60a"},{"source":"3e5693f6-cf53-4462-915b-a567afb72168","target":"b8e9c95c-26ca-45bb-bff0-f93315c5938e"},{"source":"971b5857-96ab-4e57-8f03-e22d8c9e062f","target":"be6ae7cb-598b-48f7-87c1-1f2c29399a84"},{"source":"b8e9c95c-26ca-45bb-bff0-f93315c5938e","target":"f00077d4-90f9-416f-b3c5-ada742a3d44b"},{"source":"f00077d4-90f9-416f-b3c5-ada742a3d44b","target":"2f49a1be-2367-4f7b-b802-3b2e472d630b"},{"source":"f00077d4-90f9-416f-b3c5-ada742a3d44b","target":"6f62e8b2-6b23-47b2-bac2-236198be6098"},{"source":"f00077d4-90f9-416f-b3c5-ada742a3d44b","target":"008e06a9-2716-43a7-b2cd-a1ae11d23052"},{"source":"8a4d9e20-61db-42f3-be3d-4671d338a958","target":"d0c08122-e9fb-487e-905c-d762c9051c5d"},{"source":"d0c08122-e9fb-487e-905c-d762c9051c5d","target":"558e31d6-9af3-4f79-95ed-de3c3f5ed789"},{"source":"2f49a1be-2367-4f7b-b802-3b2e472d630b","target":"5455984d-507a-4a68-9044-a2b71104a1f2"},{"source":"88034264-3b15-4d1a-897a-908e5111e6e9","target":"53f71bad-fd05-4baa-9f70-665188620aca"},{"source":"53f71bad-fd05-4baa-9f70-665188620aca","target":"d2e6802c-84d2-416f-8202-a14a4baa4c35"},{"source":"e8cdcb15-6066-40de-bf5c-ee49ff0b8a89","target":"88034264-3b15-4d1a-897a-908e5111e6e9"},{"source":"a57d5fe1-c177-4df0-80a4-f22c4ae3a11a","target":"590b61a9-d109-4ad7-a8c8-18ba133240eb"},{"source":"590b61a9-d109-4ad7-a8c8-18ba133240eb","target":"c827625f-eb83-4c4d-bf0d-12d9923765aa"},{"source":"c827625f-eb83-4c4d-bf0d-12d9923765aa","target":"2d2da52b-6d56-4145-a17f-73dd1f168998"},{"source":"2d2da52b-6d56-4145-a17f-73dd1f168998","target":"93dc5313-fa30-4765-b317-fbfc8cec893b"},{"source":"93dc5313-fa30-4765-b317-fbfc8cec893b","target":"7889ed92-0802-47cd-95c0-0d14fa6fbc12"},{"source":"7889ed92-0802-47cd-95c0-0d14fa6fbc12","target":"c135b4d9-c76e-41cc-8705-a35ed6ee715b"},{"source":"c22b4883-8b01-4988-a6fb-cb1fedff65d7","target":"94928df4-9e47-4f2e-85fa-91b3c0009f03"},{"source":"94928df4-9e47-4f2e-85fa-91b3c0009f03","target":"aed64799-c676-446a-8641-9c3e123d2e62"},{"source":"aed64799-c676-446a-8641-9c3e123d2e62","target":"c7556c12-5230-45ca-a08f-87bdbe3a1e1c"},{"source":"d984ebb9-bfee-4a43-a594-5411792ff628","target":"89fc1fc8-fbec-4a95-9a5e-e98b60ef1ef9"},{"source":"c4f350de-cd89-49b7-97bf-14cee7858b06","target":"9ef6efd1-c4c5-4ab9-b541-fe113b5982d0"},{"source":"c4f350de-cd89-49b7-97bf-14cee7858b06","target":"4c609d53-1a0a-4d55-8960-13d243c2c981"},{"source":"c4f350de-cd89-49b7-97bf-14cee7858b06","target":"2d7bfa94-74de-4e72-a4b0-de4a7c0fbe40"},{"source":"c4f350de-cd89-49b7-97bf-14cee7858b06","target":"89fc1fc8-fbec-4a95-9a5e-e98b60ef1ef9"},{"source":"c4f350de-cd89-49b7-97bf-14cee7858b06","target":"c22b4883-8b01-4988-a6fb-cb1fedff65d7"},{"source":"d984ebb9-bfee-4a43-a594-5411792ff628","target":"2d7bfa94-74de-4e72-a4b0-de4a7c0fbe40"},{"source":"d984ebb9-bfee-4a43-a594-5411792ff628","target":"e281e5de-d6af-4fe4-9a15-108d9dcb0b49"},{"source":"9ef6efd1-c4c5-4ab9-b541-fe113b5982d0","target":"053b0b8b-b1d4-41a3-b2c6-3d2582beb977"},{"source":"4c609d53-1a0a-4d55-8960-13d243c2c981","target":"053b0b8b-b1d4-41a3-b2c6-3d2582beb977"},{"source":"4c609d53-1a0a-4d55-8960-13d243c2c981","target":"4e731edb-5170-4747-a779-f06c3e706888"},{"source":"2d7bfa94-74de-4e72-a4b0-de4a7c0fbe40","target":"4e731edb-5170-4747-a779-f06c3e706888"},{"source":"2d7bfa94-74de-4e72-a4b0-de4a7c0fbe40","target":"db2f5c0c-b350-4529-b13e-edfd09390fb3"},{"source":"e281e5de-d6af-4fe4-9a15-108d9dcb0b49","target":"db2f5c0c-b350-4529-b13e-edfd09390fb3"},{"source":"e281e5de-d6af-4fe4-9a15-108d9dcb0b49","target":"c22b4883-8b01-4988-a6fb-cb1fedff65d7"},{"source":"44ce6656-0f1d-4544-a4c1-b9646be61552","target":"c22b4883-8b01-4988-a6fb-cb1fedff65d7"},{"source":"4e731edb-5170-4747-a779-f06c3e706888","target":"9a28459c-7dd2-427c-a534-55777c8017b5"},{"source":"d984ebb9-bfee-4a43-a594-5411792ff628","target":"44ce6656-0f1d-4544-a4c1-b9646be61552"},{"source":"aed64799-c676-446a-8641-9c3e123d2e62","target":"6e2bfc21-1367-4675-b2e0-715f82e947f3"},{"source":"971b5857-96ab-4e57-8f03-e22d8c9e062f","target":"3e5693f6-cf53-4462-915b-a567afb72168"}]}</script>
+
+  <script>
+    const palette = {
+      "Conhecimentos numéricos": "#93c5fd",
+      "Estatística e probabilidade": "#c4b5fd",
+      "Conhecimentos geométricos": "#fdba74",
+      "Conhecimentos algébricos": "#86efac",
+      "Conhecimentos algébrico-geométricos": "#f9a8d4",
+      "Outros": "#e2e8f0"
+    };
+
+    const areaOrder = Object.keys(palette);
+    const raw = JSON.parse(document.getElementById("skilltreeData").textContent);
+    const nodes = raw.nodes.map((node) => ({ ...node, area: inferArea(node) }));
+    const nodeById = new Map(nodes.map((node) => [node.id, node]));
+    const edges = raw.edges.filter((edge) => nodeById.has(edge.source) && nodeById.has(edge.target));
+    const children = new Map(nodes.map((node) => [node.id, []]));
+    const parents = new Map(nodes.map((node) => [node.id, []]));
+    const indegree = new Map(nodes.map((node) => [node.id, 0]));
+    const outdegree = new Map(nodes.map((node) => [node.id, 0]));
+
+    edges.forEach((edge) => {
+      children.get(edge.source).push(edge.target);
+      parents.get(edge.target).push(edge.source);
+      indegree.set(edge.target, indegree.get(edge.target) + 1);
+      outdegree.set(edge.source, outdegree.get(edge.source) + 1);
+    });
+
+    const roots = nodes.filter((node) => indegree.get(node.id) === 0).sort(originalSort).map((node) => node.id);
+    const terminals = nodes.filter((node) => outdegree.get(node.id) === 0).sort(originalSort).map((node) => node.id);
+    const layer = computeLayers();
+    const positionedNodes = layoutNodes();
+
+    const svg = document.getElementById("graph");
+    const canvas = document.getElementById("canvas");
+    const nodeW = 188;
+    const nodeH = 52;
+    let scale = 0.82;
+    let panX = 36;
+    let panY = 24;
+    let selectedId = null;
+    let areaFilter = "";
+    let query = "";
+
+    function inferArea(node) {
+      const text = `${node.label} ${node.description}`.toLowerCase();
+      if (/probabilidade|representação|analise de dados|análise de dados|medidas de tendência|média|moda|mediana|desvios|variância|rad|mtc/.test(text)) {
+        return "Estatística e probabilidade";
+      }
+      if (/plano cartesiano|retas|paralelismo|perpendicularidade|coeficiente angular|sistemas de equações/.test(text)) {
+        return "Conhecimentos algébrico-geométricos";
+      }
+      if (/fig|geométric|geometric|ângulo|angulo|circunfer|triângulo|triangulo|tales|trigonometria|simetria|comprimento|área|areas|volumes|gume|medidas lineares|superfícies|superficies|espaciais|cst|rmt|taa|rct/.test(text)) {
+        return "Conhecimentos geométricos";
+      }
+      if (/conjuntos|numéric|numerico|desigualdades|divisibilidade|fatoração|fatoracao|contagem|raz|prop|porcentagem|juros|sequencias|progressões|progressoes|dependência/.test(text)) {
+        return "Conhecimentos numéricos";
+      }
+      if (/funç|func|gráficos|graficos|equações|equacao|equações|inequações|log|polinomiais|racionais|exponenciais|igualdades/.test(text)) {
+        return "Conhecimentos algébricos";
+      }
+      return "Outros";
+    }
+
+    function originalSort(a, b) {
+      return a.y - b.y || a.x - b.x || a.label.localeCompare(b.label);
+    }
+
+    function computeLayers() {
+      const result = new Map(nodes.map((node) => [node.id, 0]));
+      const pending = new Map(indegree);
+      const queue = roots.slice();
+      while (queue.length) {
+        const id = queue.shift();
+        children.get(id).forEach((child) => {
+          result.set(child, Math.max(result.get(child), result.get(id) + 1));
+          pending.set(child, pending.get(child) - 1);
+          if (pending.get(child) === 0) queue.push(child);
+        });
+        queue.sort((a, b) => originalSort(nodeById.get(a), nodeById.get(b)));
+      }
+      return result;
+    }
+
+    function layoutNodes() {
+      const groups = new Map();
+      nodes.forEach((node) => {
+        const key = layer.get(node.id);
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(node);
+      });
+
+      const xGap = 242;
+      const yGap = 86;
+      const leftPad = 100;
+      const topPad = 110;
+      [...groups.keys()].sort((a, b) => a - b).forEach((level) => {
+        groups.get(level).sort(originalSort).forEach((node, index) => {
+          node.xPos = leftPad + level * xGap;
+          node.yPos = topPad + index * yGap;
+        });
+      });
+      return nodes;
+    }
+
+    function esc(value) {
+      return String(value).replace(/[&<>"']/g, (ch) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      }[ch]));
+    }
+
+    function wrapLabel(label, limit = 22) {
+      const words = label.split(/\s+/);
+      const lines = [];
+      let current = "";
+      words.forEach((word) => {
+        const candidate = current ? `${current} ${word}` : word;
+        if (candidate.length > limit && current) {
+          lines.push(current);
+          current = word;
+        } else {
+          current = candidate;
+        }
+      });
+      if (current) lines.push(current);
+      return lines.slice(0, 3);
+    }
+
+    function isVisible(node) {
+      const matchesArea = !areaFilter || node.area === areaFilter;
+      const q = query.toLowerCase();
+      const matchesQuery = !q || node.label.toLowerCase().includes(q) || node.description.toLowerCase().includes(q);
+      return matchesArea && matchesQuery;
+    }
+
+    function activeSet() {
+      if (!selectedId) return new Set();
+      return new Set([selectedId, ...parents.get(selectedId), ...children.get(selectedId)]);
+    }
+
+    function updateTransform() {
+      canvas.setAttribute("transform", `translate(${panX},${panY}) scale(${scale})`);
+    }
+
+    function edgePath(source, target) {
+      const sx = source.xPos + nodeW / 2;
+      const sy = source.yPos;
+      const tx = target.xPos - nodeW / 2;
+      const ty = target.yPos;
+      const mid = sx + Math.max(45, (tx - sx) / 2);
+      return `M${sx},${sy} C${mid},${sy} ${mid},${ty} ${tx},${ty}`;
+    }
+
+    function render() {
+      const visibleNodes = positionedNodes.filter(isVisible);
+      const visibleIds = new Set(visibleNodes.map((node) => node.id));
+      const visibleEdges = edges.filter((edge) => visibleIds.has(edge.source) && visibleIds.has(edge.target));
+      const active = activeSet();
+
+      canvas.innerHTML = renderClusters(visibleNodes, active) + renderEdges(visibleEdges) + renderNodes(visibleNodes, active);
+      canvas.querySelectorAll(".node").forEach((el) => {
+        el.addEventListener("click", () => selectNode(el.dataset.id));
+      });
+      updateTransform();
+      renderLists(visibleNodes, visibleEdges);
+      renderSelected();
+    }
+
+    function renderClusters(visibleNodes, active) {
+      return areaOrder.map((area) => {
+        const areaNodes = visibleNodes.filter((node) => node.area === area);
+        if (!areaNodes.length) return "";
+        const minX = Math.min(...areaNodes.map((node) => node.xPos - nodeW / 2)) - 28;
+        const maxX = Math.max(...areaNodes.map((node) => node.xPos + nodeW / 2)) + 28;
+        const minY = Math.min(...areaNodes.map((node) => node.yPos - nodeH / 2)) - 54;
+        const maxY = Math.max(...areaNodes.map((node) => node.yPos + nodeH / 2)) + 28;
+        const isDim = selectedId && !areaNodes.some((node) => active.has(node.id));
+        return `
+          <g class="cluster ${isDim ? "dim" : ""}">
+            <rect x="${minX}" y="${minY}" width="${maxX - minX}" height="${maxY - minY}" fill="${palette[area]}" stroke="${palette[area]}"></rect>
+            <text x="${minX + 14}" y="${minY + 28}">${esc(area)}</text>
+          </g>`;
+      }).join("");
+    }
+
+    function renderEdges(visibleEdges) {
+      return visibleEdges.map((edge, index) => {
+        const source = nodeById.get(edge.source);
+        const target = nodeById.get(edge.target);
+        const isActive = selectedId && (edge.source === selectedId || edge.target === selectedId);
+        const isDim = selectedId && !isActive;
+        const labelX = (source.xPos + target.xPos) / 2;
+        const labelY = (source.yPos + target.yPos) / 2 - 7 + ((index % 3) - 1) * 8;
+        return `
+          <g class="edge ${isActive ? "active" : ""} ${isDim ? "dim" : ""}">
+            <path d="${edgePath(source, target)}"></path>
+            <text x="${labelX}" y="${labelY}">pré-requisito</text>
+          </g>`;
+      }).join("");
+    }
+
+    function renderNodes(visibleNodes, active) {
+      return visibleNodes.map((node) => {
+        const isActive = active.has(node.id);
+        const isDim = selectedId && !isActive;
+        const lines = wrapLabel(node.label);
+        const firstY = node.yPos - ((lines.length - 1) * 14) / 2;
+        const classes = [
+          "node",
+          roots.includes(node.id) ? "root" : "",
+          terminals.includes(node.id) ? "terminal" : "",
+          node.id === selectedId ? "active" : "",
+          isDim ? "dim" : ""
+        ].join(" ");
+        return `
+          <g class="${classes}" data-id="${node.id}" tabindex="0" role="button" aria-label="${esc(node.label)}">
+            <rect x="${node.xPos - nodeW / 2}" y="${node.yPos - nodeH / 2}" width="${nodeW}" height="${nodeH}" fill="${palette[node.area]}"></rect>
+            ${lines.map((line, index) => `<text x="${node.xPos}" y="${firstY + index * 14}">${esc(line)}</text>`).join("")}
+          </g>`;
+      }).join("");
+    }
+
+    function renderLists(visibleNodes, visibleEdges) {
+      document.getElementById("nodeCount").textContent = String(nodes.length);
+      document.getElementById("edgeCount").textContent = String(edges.length);
+      document.getElementById("rootCount").textContent = String(roots.length);
+
+      document.getElementById("nodeList").innerHTML = visibleNodes
+        .sort((a, b) => layer.get(a.id) - layer.get(b.id) || originalSort(a, b))
+        .map((node) => `
+          <div class="node-item" data-id="${node.id}">
+            ${esc(node.label)}
+            <small>${esc(node.area)} · nível ${layer.get(node.id)} · ${parents.get(node.id).length} pais · ${children.get(node.id).length} filhos</small>
+          </div>`)
+        .join("");
+      document.querySelectorAll(".node-item").forEach((el) => {
+        el.addEventListener("click", () => selectNode(el.dataset.id));
+      });
+
+      document.getElementById("edgeList").innerHTML = visibleEdges
+        .map((edge) => `
+          <div class="edge-item">
+            ${esc(nodeById.get(edge.source).label)} -> ${esc(nodeById.get(edge.target).label)}
+            <small>pré-requisito</small>
+          </div>`)
+        .join("");
+    }
+
+    function renderSelected() {
+      const panel = document.getElementById("selected");
+      if (!selectedId) {
+        panel.innerHTML = `<strong>Nenhum nó selecionado</strong><p>Clique em um conteúdo para destacar pré-requisitos e dependentes.</p>`;
+        return;
+      }
+      const node = nodeById.get(selectedId);
+      const parentLabels = parents.get(selectedId).map((id) => nodeById.get(id).label);
+      const childLabels = children.get(selectedId).map((id) => nodeById.get(id).label);
+      panel.innerHTML = `
+        <strong>${esc(node.label)}</strong>
+        <p>${esc(node.description || "Sem descrição.")}</p>
+        <div class="badge-row">
+          ${roots.includes(node.id) ? `<span class="badge">raiz</span>` : ""}
+          ${terminals.includes(node.id) ? `<span class="badge">terminal</span>` : ""}
+          <span class="badge">${esc(node.area)}</span>
+          <span class="badge">nível ${layer.get(node.id)}</span>
+        </div>
+        <p><b>Pré-requisitos:</b> ${parentLabels.length ? esc(parentLabels.join(", ")) : "nenhum"}</p>
+        <p><b>Próximos:</b> ${childLabels.length ? esc(childLabels.join(", ")) : "nenhum"}</p>`;
+    }
+
+    function renderLegend() {
+      const areas = areaOrder.filter((area) => nodes.some((node) => node.area === area));
+      document.getElementById("legend").innerHTML = areas.map((area) => `
+        <div class="legend-item">
+          <span class="swatch" style="background:${palette[area]}"></span>
+          <span>${esc(area)}</span>
+        </div>`)
+        .join("") + `
+        <div class="legend-item"><span class="swatch" style="background:#fff;border:2px solid #0284c7"></span><span>Nó raiz</span></div>
+        <div class="legend-item"><span class="swatch" style="background:#fff;border:2px solid #be123c"></span><span>Nó terminal</span></div>`;
+
+      const select = document.getElementById("areaFilter");
+      areas.forEach((area) => {
+        const option = document.createElement("option");
+        option.value = area;
+        option.textContent = area;
+        select.appendChild(option);
+      });
+    }
+
+    function selectNode(id) {
+      selectedId = selectedId === id ? null : id;
+      render();
+    }
+
+    function fit() {
+      const maxX = Math.max(...nodes.map((node) => node.xPos + nodeW / 2)) + 120;
+      const maxY = Math.max(...nodes.map((node) => node.yPos + nodeH / 2)) + 120;
+      const rect = svg.getBoundingClientRect();
+      scale = Math.min((rect.width - 70) / maxX, (rect.height - 70) / maxY, 1.05);
+      panX = 40;
+      panY = 40;
+      updateTransform();
+    }
+
+    svg.addEventListener("wheel", (event) => {
+      event.preventDefault();
+      const delta = event.deltaY > 0 ? 0.9 : 1.1;
+      scale = Math.max(0.2, Math.min(2.4, scale * delta));
+      updateTransform();
+    }, { passive: false });
+
+    let dragging = false;
+    let last = null;
+    svg.addEventListener("pointerdown", (event) => {
+      dragging = true;
+      last = { x: event.clientX, y: event.clientY };
+      svg.classList.add("dragging");
+      svg.setPointerCapture(event.pointerId);
+    });
+    svg.addEventListener("pointermove", (event) => {
+      if (!dragging) return;
+      panX += event.clientX - last.x;
+      panY += event.clientY - last.y;
+      last = { x: event.clientX, y: event.clientY };
+      updateTransform();
+    });
+    svg.addEventListener("pointerup", () => {
+      dragging = false;
+      svg.classList.remove("dragging");
+    });
+
+    document.getElementById("search").addEventListener("input", (event) => {
+      query = event.target.value.trim();
+      render();
+    });
+    document.getElementById("areaFilter").addEventListener("change", (event) => {
+      areaFilter = event.target.value;
+      selectedId = null;
+      render();
+    });
+    document.getElementById("fitButton").addEventListener("click", fit);
+    document.getElementById("clearButton").addEventListener("click", () => {
+      selectedId = null;
+      query = "";
+      areaFilter = "";
+      document.getElementById("search").value = "";
+      document.getElementById("areaFilter").value = "";
+      render();
+      fit();
+    });
+
+    renderLegend();
+    render();
+    requestAnimationFrame(fit);
+  </script>
+</body>
+</html>

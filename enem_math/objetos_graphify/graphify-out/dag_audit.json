@@ -1,0 +1,13 @@
+{
+  "root": "Matemática e suas Tecnologias",
+  "category_count": 5,
+  "unique_object_count": 35,
+  "edge_count": 41,
+  "shared_objects": {
+    "Circunferências": [
+      "Conhecimentos geométricos",
+      "Conhecimentos algébricos/geométricos"
+    ]
+  },
+  "source_file": "/Users/yzhlu/Documents/PHD/2026-1/PPGEEC2327_-_topicos_4_-_T01/enem/objetos_graphify/objetos_de_conhecimento.pdf"
+}

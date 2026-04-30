@@ -1,0 +1,180 @@
+digraph DAG_ENEM_Math {
+  graph [
+    rankdir=LR,
+    label="DAG de estudos - Matemática ENEM",
+    labelloc=t,
+    fontsize=20,
+    fontname="Helvetica",
+    bgcolor="white",
+    compound=true,
+    splines=ortho
+  ];
+
+  node [
+    shape=box,
+    style="rounded,filled",
+    fontname="Helvetica",
+    fontsize=11,
+    color="#475569",
+    fillcolor="#f8fafc",
+    margin="0.10,0.07"
+  ];
+
+  edge [
+    color="#64748b",
+    arrowsize=0.7,
+    fontname="Helvetica",
+    fontsize=9
+  ];
+
+  subgraph cluster_numericos {
+    label="Conhecimentos numericos";
+    color="#93c5fd";
+    style="rounded";
+    aritmetica [label="Aritmetica"];
+    sistemas_de_numeracao [label="Sistemas de numeracao"];
+    numeros_naturais_inteiros [label="Numeros naturais e inteiros"];
+    numeros_racionais_fracoes [label="Numeros racionais e fracoes"];
+    numeros_reais [label="Numeros reais"];
+    mmc_mdc_divisibilidade [label="Divisibilidade, MMC e MDC"];
+    potenciacao_radicacao [label="Potenciacao e radiciacao"];
+    razao_proporcao [label="Razao e proporcao"];
+    porcentagem_juros [label="Porcentagem e juros"];
+    matematica_financeira [label="Matematica financeira"];
+    sequencias_series [label="Sequencias e series"];
+    progressao_aritmetica [label="Progressao aritmetica"];
+    progressao_geometrica [label="Progressao geometrica"];
+    contagem [label="Principios de contagem"];
+  }
+
+  subgraph cluster_algebra {
+    label="Conhecimentos algebricos";
+    color="#86efac";
+    style="rounded";
+    equacoes [label="Equacoes"];
+    inequacoes [label="Inequacoes"];
+    sistemas_equacoes [label="Sistemas de equacoes"];
+    graficos_funcoes [label="Graficos e funcoes"];
+    funcao_afim [label="Funcao afim"];
+    funcao_quadratica [label="Funcao quadratica"];
+    funcao_exponencial [label="Funcao exponencial"];
+    logaritmos [label="Logaritmos"];
+    funcao_logaritmica [label="Funcao logaritmica"];
+    ciclo_trigonometrico [label="Ciclo trigonometrico"];
+    funcao_trigonometrica [label="Funcao trigonometrica"];
+  }
+
+  subgraph cluster_geometria {
+    label="Conhecimentos geometricos";
+    color="#fdba74";
+    style="rounded";
+    grandezas_medidas [label="Grandezas, medidas e escalas"];
+    geometria_plana [label="Geometria plana"];
+    angulos_retas [label="Angulos e posicoes de retas"];
+    semelhanca_tales [label="Semelhanca, congruencia e Tales"];
+    relacoes_metricas [label="Relacoes metricas nos triangulos"];
+    circunferencias [label="Circunferencias"];
+    trigonometria_agudo [label="Trigonometria do angulo agudo"];
+    geometria_espacial [label="Geometria espacial"];
+    simetrias [label="Simetrias planas e espaciais"];
+  }
+
+  subgraph cluster_estatistica {
+    label="Estatistica e probabilidade";
+    color="#c4b5fd";
+    style="rounded";
+    leitura_tabelas [label="Leitura de tabelas"];
+    interpretacao_graficos [label="Interpretacao de graficos"];
+    estatistica [label="Estatistica descritiva"];
+    medidas_tendencia [label="Media, moda e mediana"];
+    dispersao [label="Desvios e variancia"];
+    teoria_conjuntos [label="Teoria dos conjuntos"];
+    probabilidade [label="Probabilidade"];
+    analise_combinatoria [label="Analise combinatoria"];
+  }
+
+  subgraph cluster_analitica {
+    label="Conhecimentos algebrico-geometricos";
+    color="#f9a8d4";
+    style="rounded";
+    plano_cartesiano [label="Plano cartesiano"];
+    geometria_analitica [label="Geometria analitica"];
+    retas_analitica [label="Retas no plano"];
+    circunferencia_analitica [label="Circunferencia no plano"];
+    paralelismo_perpendicularidade [label="Paralelismo e perpendicularidade"];
+  }
+
+  aritmetica -> sistemas_de_numeracao [label="base numerica"];
+  aritmetica -> numeros_naturais_inteiros [label="base numerica"];
+  numeros_naturais_inteiros -> numeros_racionais_fracoes [label="extensao dos conjuntos"];
+  numeros_racionais_fracoes -> numeros_reais [label="extensao dos conjuntos"];
+  numeros_naturais_inteiros -> mmc_mdc_divisibilidade [label="graphify: MMC/MDC"];
+  numeros_reais -> potenciacao_radicacao [label="graphify: numeros reais + potenciacao"];
+  mmc_mdc_divisibilidade -> razao_proporcao [label="pre-requisito operacional"];
+  numeros_racionais_fracoes -> razao_proporcao [label="graphify: fracoes + razao"];
+  razao_proporcao -> porcentagem_juros [label="peso 6"];
+  porcentagem_juros -> matematica_financeira [label="peso 5"];
+  razao_proporcao -> matematica_financeira [label="peso 7"];
+  potenciacao_radicacao -> funcao_exponencial [label="pre-requisito"];
+  potenciacao_radicacao -> logaritmos [label="graphify: potencias + logaritmo"];
+  aritmetica -> sequencias_series [label="base numerica"];
+  sequencias_series -> progressao_aritmetica [label="graphify: PA + sequencias"];
+  sequencias_series -> progressao_geometrica [label="peso 3"];
+  potenciacao_radicacao -> progressao_geometrica [label="graphify: potenciacao + PG"];
+  progressao_geometrica -> funcao_exponencial [label="peso 4"];
+  aritmetica -> contagem [label="base numerica"];
+  sistemas_de_numeracao -> contagem [label="graphify: sistemas + contagem"];
+  contagem -> analise_combinatoria [label="PDF: principios de contagem"];
+  potenciacao_radicacao -> analise_combinatoria [label="hyperedge he_008"];
+
+  aritmetica -> equacoes [label="base algebrica"];
+  equacoes -> inequacoes [label="PDF: equacoes e inequacoes"];
+  equacoes -> sistemas_equacoes [label="peso 2"];
+  razao_proporcao -> sistemas_equacoes [label="peso 2"];
+  equacoes -> graficos_funcoes [label="pre-requisito"];
+  plano_cartesiano -> graficos_funcoes [label="representacao"];
+  graficos_funcoes -> funcao_afim [label="PDF: funcoes 1o grau"];
+  equacoes -> funcao_afim [label="peso 1"];
+  funcao_afim -> funcao_quadratica [label="peso 5"];
+  equacoes -> funcao_quadratica [label="peso 7"];
+  potenciacao_radicacao -> funcao_exponencial [label="base de expoentes"];
+  logaritmos -> funcao_logaritmica [label="PDF: funcao logaritmica"];
+  funcao_exponencial -> funcao_logaritmica [label="peso 2"];
+  ciclo_trigonometrico -> funcao_trigonometrica [label="PDF: ciclo + funcoes trig."];
+  trigonometria_agudo -> ciclo_trigonometrico [label="progressao conceitual"];
+
+  razao_proporcao -> grandezas_medidas [label="peso 6"];
+  grandezas_medidas -> geometria_plana [label="peso 6"];
+  geometria_plana -> angulos_retas [label="PDF"];
+  angulos_retas -> semelhanca_tales [label="PDF"];
+  razao_proporcao -> semelhanca_tales [label="graphify: semelhanca + razao"];
+  semelhanca_tales -> relacoes_metricas [label="PDF"];
+  relacoes_metricas -> trigonometria_agudo [label="PDF"];
+  geometria_plana -> circunferencias [label="PDF"];
+  geometria_plana -> simetrias [label="PDF"];
+  grandezas_medidas -> geometria_espacial [label="peso 1"];
+  geometria_plana -> geometria_espacial [label="peso 1"];
+  trigonometria_agudo -> geometria_espacial [label="peso 4"];
+
+  leitura_tabelas -> interpretacao_graficos [label="peso 2"];
+  interpretacao_graficos -> estatistica [label="peso 2"];
+  estatistica -> medidas_tendencia [label="PDF"];
+  medidas_tendencia -> dispersao [label="PDF"];
+  teoria_conjuntos -> probabilidade [label="peso 3"];
+  analise_combinatoria -> probabilidade [label="hyperedge he_001"];
+  leitura_tabelas -> probabilidade [label="peso 9"];
+  interpretacao_graficos -> probabilidade [label="peso 8"];
+  estatistica -> probabilidade [label="graphify"];
+
+  plano_cartesiano -> geometria_analitica [label="PDF"];
+  geometria_plana -> geometria_analitica [label="peso 2"];
+  geometria_analitica -> retas_analitica [label="PDF"];
+  retas_analitica -> paralelismo_perpendicularidade [label="PDF"];
+  geometria_analitica -> circunferencia_analitica [label="PDF"];
+  sistemas_equacoes -> geometria_analitica [label="PDF"];
+  funcao_afim -> geometria_analitica [label="peso 3"];
+
+  grandezas_medidas -> interpretacao_graficos [label="peso 4"];
+  funcao_afim -> matematica_financeira [label="peso 6"];
+  progressao_geometrica -> matematica_financeira [label="peso 3"];
+}

@@ -1,0 +1,137 @@
+{
+  "communities": {
+    "0": [
+      "categoria_conhecimentos_geom_tricos",
+      "objeto_caracter_sticas_das_figuras_geom_tricas_planas_e_espaciais",
+      "objeto_comprimentos_reas_e_volumes",
+      "objeto_congru_ncia_e_semelhan_a_de_tri_ngulos",
+      "objeto_grandezas_unidades_de_medida_e_escalas",
+      "objeto_ngulos",
+      "objeto_posi_es_de_retas",
+      "objeto_rela_es_m_tricas_nos_tri_ngulos",
+      "objeto_simetrias_de_figuras_planas_ou_espaciais",
+      "objeto_teorema_de_tales",
+      "objeto_trigonometria_do_ngulo_agudo"
+    ],
+    "1": [
+      "categoria_conhecimentos_num_ricos",
+      "objeto_desigualdades",
+      "objeto_divisibilidade",
+      "objeto_fatora_o",
+      "objeto_opera_es_em_conjuntos_num_ricos",
+      "objeto_porcentagem_e_juros",
+      "objeto_princ_pios_de_contagem",
+      "objeto_raz_es_e_propor_es",
+      "objeto_rela_es_de_depend_ncia_entre_grandezas",
+      "objeto_sequ_ncias_e_progress_es"
+    ],
+    "2": [
+      "categoria_conhecimentos_alg_bricos",
+      "objeto_equa_es_e_inequa_es",
+      "objeto_fun_es_alg_bricas_do_1_e_do_2_graus",
+      "objeto_fun_es_exponenciais_e_logar_tmicas",
+      "objeto_fun_es_polinomiais",
+      "objeto_fun_es_racionais",
+      "objeto_gr_ficos_e_fun_es",
+      "objeto_rela_es_no_ciclo_trigonom_trico_e_fun_es_trigonom_tricas"
+    ],
+    "3": [
+      "categoria_conhecimentos_de_estat_stica_e_probabilidade",
+      "matematica_tecnologias",
+      "objeto_desvios_e_vari_ncia",
+      "objeto_medidas_de_tend_ncia_central",
+      "objeto_no_es_de_probabilidade",
+      "objeto_representa_o_e_an_lise_de_dados"
+    ],
+    "4": [
+      "categoria_conhecimentos_alg_bricos_geom_tricos",
+      "objeto_circunfer_ncias",
+      "objeto_paralelismo_e_perpendicularidade",
+      "objeto_plano_cartesiano",
+      "objeto_retas",
+      "objeto_sistemas_de_equa_es"
+    ]
+  },
+  "cohesion": {
+    "0": 0.18,
+    "1": 0.2,
+    "2": 0.25,
+    "3": 0.33,
+    "4": 0.33
+  },
+  "gods": [
+    {
+      "id": "categoria_conhecimentos_geom_tricos",
+      "label": "Conhecimentos geométricos",
+      "degree": 12
+    },
+    {
+      "id": "categoria_conhecimentos_num_ricos",
+      "label": "Conhecimentos numéricos",
+      "degree": 10
+    },
+    {
+      "id": "categoria_conhecimentos_alg_bricos",
+      "label": "Conhecimentos algébricos",
+      "degree": 8
+    },
+    {
+      "id": "categoria_conhecimentos_alg_bricos_geom_tricos",
+      "label": "Conhecimentos algébricos/geométricos",
+      "degree": 6
+    },
+    {
+      "id": "matematica_tecnologias",
+      "label": "Matemática e suas Tecnologias",
+      "degree": 5
+    },
+    {
+      "id": "categoria_conhecimentos_de_estat_stica_e_probabilidade",
+      "label": "Conhecimentos de estatística e probabilidade",
+      "degree": 5
+    },
+    {
+      "id": "objeto_circunfer_ncias",
+      "label": "Circunferências",
+      "degree": 2
+    },
+    {
+      "id": "objeto_opera_es_em_conjuntos_num_ricos",
+      "label": "Operações em conjuntos numéricos",
+      "degree": 1
+    },
+    {
+      "id": "objeto_desigualdades",
+      "label": "Desigualdades",
+      "degree": 1
+    },
+    {
+      "id": "objeto_divisibilidade",
+      "label": "Divisibilidade",
+      "degree": 1
+    }
+  ],
+  "surprises": [],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `Matemática e suas Tecnologias` connect `Matemática e suas Tecnologias` to `Conhecimentos geométricos`, `Conhecimentos numéricos`, `Conhecimentos algébricos`, `Conhecimentos algébricos/geométricos`?",
+      "why": "High betweenness centrality (0.754) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Conhecimentos geométricos` connect `Conhecimentos geométricos` to `Matemática e suas Tecnologias`, `Conhecimentos algébricos/geométricos`?",
+      "why": "High betweenness centrality (0.458) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Conhecimentos numéricos` connect `Conhecimentos numéricos` to `Matemática e suas Tecnologias`?",
+      "why": "High betweenness centrality (0.404) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `Operações em conjuntos numéricos`, `Desigualdades`, `Divisibilidade` to the rest of the system?",
+      "why": "34 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}

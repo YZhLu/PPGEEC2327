@@ -1,0 +1,19 @@
+{
+  "files": {
+    "code": [],
+    "document": [
+      "graphify_corpus_objetos.txt"
+    ],
+    "paper": [
+      "objetos_de_conhecimento.pdf"
+    ],
+    "image": [],
+    "video": []
+  },
+  "total_files": 1,
+  "total_words": 151,
+  "needs_graph": false,
+  "warning": null,
+  "skipped_sensitive": [],
+  "graphifyignore_patterns": 0
+}
